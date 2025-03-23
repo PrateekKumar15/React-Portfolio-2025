@@ -7,3 +7,20 @@
 :root {
     font-family: "Inter", sans-serif;
 }
+
+/* Background animate for preloader */
+.background-animate {
+  background-size: 200%;
+  -webkit-animation: AnimateBackground 2s ease infinite;
+  -moz-animation: AnimateBackground 2s ease infinite;
+  animation: AnimateBackground 2s ease infinite;
+}
+
+@keyframes AnimateBackground {
+  0%,100% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+}

@@ -3,13 +3,14 @@ import { ErrorBoundary } from "react-error-boundary";
 import { motion } from "framer-motion";
 import AnimatedCursor from "react-animated-cursor";
 import Preloader from "./components/Preloader";
+import Background3D from "./components/3DBackground";
 
 // Lazy-loaded components 
 const Navbar = lazy(() => import("./components/Navbar"));
 const Hero = lazy(() => import("./components/Hero"));
 const About = lazy(() => import("./components/About"));
 const Skills = lazy(() => import("./components/Skills"));
-const Experience = lazy(() => import("./components/Experience"));
+const Experience = lazy(() => import("./components/Education"));
 const Projects = lazy(() => import("./components/Projects"));
 const Contact = lazy(() => import("./components/Contact"));
 
@@ -122,27 +123,10 @@ const App = () => {
           animate={{ opacity: 1 }}
           transition={{ duration: 0.5 }}
           className="relative overflow-hidden text-slate-300 antialiased
-          selection:bg-indigo-500/50 selection:text-pink-500"
+          selection:bg-indigo-500/50 selection:text-rose-300"
         >
-          {/* Animation Section with Optimized Performance */}
-          <div className="fixed inset-0 -z-10">
-            <div className="absolute inset-0 bg-slate-900">
-              <motion.div
-                animate={{
-                  backgroundPosition: ["0% 0%", "100% 100%"],
-                }}
-                transition={{
-                  duration: 15,
-                  repeat: Infinity,
-                  repeatType: "reverse",
-                  ease: "linear"
-                }}
-                className="absolute inset-0 bg-[linear-gradient(45deg,#1e293b_25%,#312e81_50%,#1e293b_75%)] bg-[size:400%_400%] opacity-50"
-              />
-              <div className="absolute inset-0 bg-[linear-gradient(to_right,rgba(71,85,105,0.1)_1px,transparent_1px),linear-gradient(to_bottom,rgba(71,85,105,0.1)_1px,transparent_1px)] bg-[size:24px_24px] opacity-30"></div>
-              <div className="absolute inset-0 bg-[linear-gradient(to_right,#4f4f4f2e_1px,transparent_1px),linear-gradient(to_bottom,#4f4f4f2e_1px,transparent_1px)] bg-[size:14px_24px] [mask-image:radial-gradient(ellipse_80%_50%_at_50%_0%,#000_70%,transparent_110%)]"></div>
-            </div>
-          </div>
+          {/* 3D Background Component */}
+          <Background3D />
 
           {/* Main Content with Enhanced Layout */}
           <div className="container mx-auto px-4 md:px-8 space-y-16 max-w-6xl">
@@ -161,8 +145,8 @@ const App = () => {
                 key={id}
                 id={id}
                 initial={{ opacity: 0, y: 50 }}
-                whileInView={{ 
-                  opacity: 1, 
+                whileInView={{
+                  opacity: 1,
                   y: 0,
                   transition: {
                     type: "spring",
@@ -170,7 +154,7 @@ const App = () => {
                     bounce: 0.2
                   }
                 }}
-                viewport={{ once: true}}
+                viewport={{ once: true }}
                 className="relative group"
               >
                 <Component />
@@ -198,7 +182,7 @@ const App = () => {
               mixBlendMode: "screen",
             }}
             innerStyle={{
-              backgroundColor: "rgba(99, 102, 241, 0.7)",
+              backgroundColor: "rgba(72,208,205,255)",
               mixBlendMode: "screen",
             }}
             clickables={[

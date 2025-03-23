@@ -1,0 +1,11 @@
+Model Information:
+* title:	Destiny 2 Character Bust
+* source:	https://sketchfab.com/3d-models/destiny-2-character-bust-a56b08cf4d6948bdbdd1f7cd7a12d98a
+* author:	Daniel Cardona (https://sketchfab.com/DanielCardonaArt)
+
+Model License:
+* license type:	CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)
+* requirements:	Author must be credited. Commercial use is allowed.
+
+If you use this 3D model in your project be sure to copy paste this credit wherever you share it:
+This work is based on "Destiny 2 Character Bust" (https://sketchfab.com/3d-models/destiny-2-character-bust-a56b08cf4d6948bdbdd1f7cd7a12d98a) by Daniel Cardona (https://sketchfab.com/DanielCardonaArt) licensed under CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)
