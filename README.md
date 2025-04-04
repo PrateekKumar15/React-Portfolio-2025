@@ -6,7 +6,7 @@ A personal portfolio website built with React, showcasing my skills, experience,
 **Live Demo**
 -------------
 
-You can view the live demo of the website [here](https://portfolio-o2g.pages.dev/).
+You can view the live demo of the website [here](https://react-portfolio-2025.onrender.com/).
 
 **Features**
 ------------
@@ -34,7 +34,7 @@ You can view the live demo of the website [here](https://portfolio-o2g.pages.dev
 
 To run the project locally, follow these steps:
 
-1. Clone the repository using `git clone https://github.com/prateekraiger/Portfolio.git`
+1. Clone the repository using `git clone https://github.com/PrateekKumar15/React-Portfolio-2025.git`
 2. Install the dependencies using `npm install`
 3. Start the development server using `npm run dev`
 4. Open `http://localhost:3000` in your web browser to view the website
