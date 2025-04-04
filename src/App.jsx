@@ -1,9 +1,8 @@
-import React, { Suspense, lazy, useState, useEffect } from "react";
+import  { Suspense, lazy, useState, useEffect } from "react";
 import { ErrorBoundary } from "react-error-boundary";
 import { motion } from "framer-motion";
 import AnimatedCursor from "react-animated-cursor";
 import Preloader from "./components/Preloader";
-import Background3D from "./components/3DBackground";
 
 // Lazy-loaded components 
 const Navbar = lazy(() => import("./components/Navbar"));
@@ -15,6 +14,7 @@ const Projects = lazy(() => import("./components/Projects"));
 const Contact = lazy(() => import("./components/Contact"));
 
 // Error Fallback Component
+// eslint-disable-next-line react/prop-types
 const ErrorFallback = ({ error, resetErrorBoundary }) => {
   return (
     <motion.div
@@ -48,7 +48,7 @@ const ErrorFallback = ({ error, resetErrorBoundary }) => {
           </h2>
         </div>
         <pre className="text-sm text-slate-300 bg-slate-900 p-4 rounded-lg mb-6 max-h-40 overflow-auto">
-          {error.message}
+          {error}
         </pre>
         <motion.button
           whileHover={{ scale: 1.05 }}
@@ -123,10 +123,15 @@ const App = () => {
           animate={{ opacity: 1 }}
           transition={{ duration: 0.5 }}
           className="relative overflow-hidden text-slate-300 antialiased
-          selection:bg-indigo-500/50 selection:text-rose-300"
+          selection:bg-indigo-500/50 selection:text-rose-300 bg-slate-900"
         >
-          {/* 3D Background Component */}
-          <Background3D />
+          {/* Background Component */}
+        
+          <div className="absolute inset-0 bg-gradient-to-t from-slate-900 to-transparent opacity-70"></div>
+
+          {/* Grid pattern overlay */}
+          <div className="absolute inset-0 bg-[linear-gradient(to_right,rgba(99,102,241,0.05)_1px,transparent_1px),linear-gradient(to_bottom,rgba(99,102,241,0.05)_1px,transparent_1px)] bg-[size:40px_40px] [mask-image:radial-gradient(ellipse_80%_50%_at_50%_0%,#000_70%,transparent_100%)]"></div>
+        
 
           {/* Main Content with Enhanced Layout */}
           <div className="container mx-auto px-4 md:px-8 space-y-16 max-w-6xl">
@@ -177,12 +182,12 @@ const App = () => {
             innerScale={1.5}
             outerScale={3}
             outerStyle={{
-              border: "2px solid rgba(99, 102, 241, 0.7)",
+              border: "2px solid rgba(255, 255, 250, 0.7)",
               backgroundColor: "transparent",
               mixBlendMode: "screen",
             }}
             innerStyle={{
-              backgroundColor: "rgba(72,208,205,255)",
+              backgroundColor: "#00346d",
               mixBlendMode: "screen",
             }}
             clickables={[

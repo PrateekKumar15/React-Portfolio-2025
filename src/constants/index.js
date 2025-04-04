@@ -46,43 +46,43 @@ export const EDUCATION = [
 
 export const PROJECTS = [
   {
-    title: "Codefit Gym Website",
+    title: "E-commerce Website",
     image: project1,
     description:
-      "CodeFit - A responsive gym website for a fit and healthy lifestyle, empowering users to reach their fitness goals.",
-    technologies: ["HTML", "CSS", "Js"],
-    link: "https://prateekraiger.github.io/CodeFit-gym-website/",
+      "Buy-It -Built a scalable e-commerce platform with Node.js, React, and MongoDB, featuring JWT auth, Redis caching, RESTful APIs, role-based access, and Cloudinary for media storage..",
+    technologies: [
+      "React",
+      "Tailwind CSS",
+      "MongoDB",
+      "Node.js",
+      "Express",
+      "Redis",
+      "Cloudinary",
+    ],
+    link: "https://github.com/PrateekKumar15/e-commerce",
   },
   {
-    title: "Grilli Restaurant",
+    title: "News App",
     image: project2,
     description:
-      "Grilli - Responsive Web Design for Expertly Grilled Cuisine, Bringing Flavor to Life with a Modern Dining Experience.",
-    technologies: ["HTML", "CSS", "Js"],
-    link: "https://grilli-50z.pages.dev/",
+      "NewsApp - Built a dynamic news app with ReactJS and News API, offering categorized news by topic/country, real-time updates, and a responsive, user-friendly interface with filtering options.",
+    technologies: ["React", "Bootstrap", "Restful API", "CSS"],
+    link: "https://github.com/PrateekKumar15/NewsApp",
   },
   {
-    title: "Robin - Ai ChatBot",
+    title: "Landmine Detection System",
     image: project3,
     description:
-      "Robin AI: A smart and conversational chatbot designed to enhance user interaction and deliver seamless assistance",
-    technologies: ["HTML", "Tailwind CSS", "Js", "Node.js"],
-    link: "https://robin-ai-nine.vercel.app/",
+      "Built a landmine detection system using Raspberry Pi and an IR thermal sensor, enabling real-time monitoring and data analysis via a network-connected interface for improved safety and efficiency.",
+    technologies: ["Python", "Raspberry Pi", "IR thermal sensor"],
+    link: "https://github.com/PrateekKumar15/Landmine-Detection-System",
   },
   {
-    title: "DevFolio",
+    title: "Bruce",
     image: project4,
     description:
-      "DevFolio: A showcase of my frontend projects, blending creativity and functionality into seamless web experiences",
-    technologies: ["HTML", "CSS", "Js", "Vite"],
+      "AI-powered PPT builder with Gemini AI, Next.js, and a template marketplace, featuring Google auth and prompt-based slide generation.",
+    technologies: ["Next.js", "React", "Tailwind CSS", "Prisma", "Clerk","Gemini Api"],
     link: "https://devfolio-2lv.pages.dev/",
-  },
-  {
-    title: "Robin - Ai ChatBot",
-    image: project3,
-    description:
-      "Robin AI: A smart and conversational chatbot designed to enhance user interaction and deliver seamless assistance",
-    technologies: ["HTML", "Tailwind CSS", "Js", "Node.js"],
-    link: "https://robin-ai-nine.vercel.app/",
   },
 ];

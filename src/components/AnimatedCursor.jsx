@@ -1,4 +1,4 @@
-import React, { useEffect, useRef, useState } from "react";
+import  { useEffect, useRef, useState } from "react";
 import { motion, useSpring } from "framer-motion";
 
 const AnimatedCursor = () => {
@@ -90,7 +90,7 @@ const AnimatedCursor = () => {
         />
 
         {/* Crosshair lines with improved positioning */}
-        <div className="relative w-40 h-40 flex items-center justify-center">
+         <div className="relative w-40 h-40 flex items-center justify-center">
           {/* Horizontal lines */}
           <motion.div
             className="absolute bg-[#F28D9F]"
@@ -122,7 +122,8 @@ const AnimatedCursor = () => {
             }}
             transition={{ duration: 0.2 }}
           />
-        </div>
+        </div>   
+
       </motion.div>
     </motion.div>
   );

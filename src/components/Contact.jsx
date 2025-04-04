@@ -1,7 +1,7 @@
 import { useInView } from "framer-motion";
 import { motion } from "framer-motion";
 import { useRef, useState } from "react";
-import ContactSvg from "./ContactSvg";
+
 import emailjs from 'emailjs-com';
 
 const listVariant = {
@@ -147,23 +147,14 @@ const Contact = () => {
           <button
             type="submit"
             disabled={loading}
-            className={`formButton w-full ${loading ? 'bg-indigo-400' : 'bg-indigo-600'} text-white font-semibold py-2 rounded-md hover:bg-indigo-500 transition duration-200 flex justify-center items-center`}
+            className={`formButton w-full ${loading ? 'bg-opacity-85' : 'bg-[#00346d]'} text-white font-semibold py-2 rounded-md hover:bg-opacity-85 transition duration-200 flex justify-center items-center`}
           >
             {loading ? 'Sending...' : 'Send'}
           </button>
         </motion.form>
       </div>
 
-      {/* <div className="cSection w-full md:w-1/2 p-4">
-        <motion.div
-          className="flex items-center justify-center h-full"
-          variants={itemVariant}
-        >
-          <div className="w-full h-auto">
-            <ContactSvg />
-          </div>
-        </motion.div>
-      </div> */}
+      
     </motion.div>
   );
 };

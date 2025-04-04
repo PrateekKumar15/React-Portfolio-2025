@@ -1,13 +1,10 @@
 import React, { useEffect, useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-// import logo from "../assets/profilelogo.png";
-import logo from "../assets/P.svg"
 import Lottie from 'lottie-react';
 import animationData from '../assets/P.json';
 import {
   FaLinkedinIn,
   FaGithub,
-  FaTwitterSquare,
   FaInstagram,
   FaHome,
   FaUser,
@@ -40,7 +37,7 @@ const Navbar = () => {
   }, [lastScrollY]);
 
   const socialIconVariants = {
-    hover: { scale: 1.1, transition: { type: "spring", stiffness: 300 } },
+    hover: {  transition: { type: "spring", stiffness: 300 } },
   };
 
   const navItems = [
@@ -48,7 +45,7 @@ const Navbar = () => {
     { name: "About", link: "#about", icon: <FaUser /> },
     { name: "Skills", link: "#skills", icon: <FaCode /> },
     { name: "Projects", link: "#projects", icon: <FaProjectDiagram /> },
-    { name: "Experience", link: "#experience", icon: <FaBriefcase /> },
+    { name: "Education", link: "#experience", icon: <FaBriefcase /> },
     { name: "Contact", link: "#contact", icon: <FaEnvelope /> },
   ];
 
@@ -65,6 +62,7 @@ const Navbar = () => {
                 animationData={animationData}
                 play={true}
                 className="w-8 h-8"
+                onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
                 
               />
             </div>
@@ -86,7 +84,7 @@ const Navbar = () => {
                   rel="noopener noreferrer"
                   whileHover="hover"
                   variants={socialIconVariants}
-                  className="hover:text-cyan-400 transition duration-300 rounded-full p-2 hover:bg-gray-500"
+                  className="hover:text-white transition duration-300 rounded-full p-2 hover:bg-[#00356d]"
                 >
                   <Icon className="h-5 w-5" />
                 </motion.a>
@@ -112,7 +110,7 @@ const Navbar = () => {
                   <a
                     key={item.name}
                     href={item.link}
-                    className="flex flex-col items-center justify-center hover:text-cyan-400 transition duration-300 group"
+                    className="flex flex-col items-center justify-center hover:text-[#5e74be] transition duration-300 group"
                     title={item.name}
                   >
                     {React.cloneElement(item.icon, {

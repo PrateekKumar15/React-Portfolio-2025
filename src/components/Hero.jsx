@@ -1,6 +1,6 @@
 import { HERO_CONTENT } from "../constants";
 import profilePic from "../assets/myprofile.png";
-import { motion, transform } from "framer-motion";
+import { motion} from "framer-motion";
 
 const container = (delay) => ({
   hidden: { x: -100, opacity: 0 },
@@ -29,7 +29,7 @@ const Hero = () => {
               variants={container(0.5)}
               initial="hidden"
               animate="visible"
-              className="bg-gradient-to-r from-pink-300 via-slate-500 to-purple-500 bg-clip-text text-4xl tracking-tight text-transparent"
+              className="bg-gradient-to-r from-blue-500 via-slate-500 to-cyan-200 bg-clip-text text-4xl tracking-tight text-transparent"
             >
               Full Stack Developer
             </motion.span>
@@ -46,7 +46,7 @@ const Hero = () => {
               variants={container(1)}
               initial="hidden"
               animate="visible"
-              className="my-1 font-light text-black  bg-[#48d0cd] p-3 rounded-xl text-md   shadow-lg hover:bg-cyan-200 transition-transform duration-300"
+              className="my-1 font-light text-white  bg-[#00346d] px-3  py-2 rounded-3xl text-md   shadow-lg hover:bg-opacity-75 transition-transform duration-300"
               href="/resume.pdf"
               download
               target="_blank"
