@@ -37,7 +37,7 @@ const Navbar = () => {
   }, [lastScrollY]);
 
   const socialIconVariants = {
-    hover: {  transition: { type: "spring", stiffness: 300 } },
+    hover: { transition: { type: "spring", stiffness: 300 } },
   };
 
   const navItems = [
@@ -60,10 +60,10 @@ const Navbar = () => {
               <Lottie
                 loop={false}
                 animationData={animationData}
-                play={true}
+                data-play={true}
                 className="w-8 h-8"
                 onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
-                
+
               />
             </div>
 

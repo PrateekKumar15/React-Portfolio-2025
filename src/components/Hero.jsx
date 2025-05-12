@@ -47,7 +47,7 @@ const Hero = () => {
               initial="hidden"
               animate="visible"
               className="my-1 font-light text-white  bg-[#00346d] px-3  py-2 rounded-3xl text-md   shadow-lg hover:bg-opacity-75 transition-transform duration-300"
-              href="/resume.pdf"
+              href="/Prateek_Kumar_Resume.pdf"
               download
               target="_blank"
               rel="noopener noreferrer"

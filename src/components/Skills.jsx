@@ -3,7 +3,7 @@ import { TbBrandNextjs } from "react-icons/tb";
 import { SiMongodb } from "react-icons/si";
 import { FaNodeJs } from "react-icons/fa";
 import { SiExpress } from "react-icons/si";
-import { SiJavascript, SiHtml5, SiCss3, SiTailwindcss } from "react-icons/si";
+import { SiJavascript, SiHtml5, SiCss3, SiTailwindcss, SiGo } from "react-icons/si";
 import { motion } from "framer-motion";
 
 const iconVariants = (duration) => ({
@@ -100,6 +100,22 @@ const Skills = () => {
           className="rounded-2xl border-4 border-neutral-800 p-6 shadow-lg hover:scale-110 transition-transform"
         >
           <FaNodeJs className="text-5xl text-green-500" />
+        </motion.div>
+        <motion.div
+          variants={iconVariants(3)}
+          initial="initial"
+          animate="animate"
+          className="rounded-2xl border-4 border-neutral-800 p-6 shadow-lg hover:scale-110 transition-transform"
+        >
+          <SiGo className="text-5xl text-[#29BEB0]" />
+        </motion.div>
+        <motion.div
+          variants={iconVariants(6)}
+          initial="initial"
+          animate="animate"
+          className="rounded-2xl border-4 border-neutral-800 p-6 shadow-lg hover:scale-110 transition-transform"
+        >
+          <TbBrandNextjs className="text-5xl text-white" />
         </motion.div>
       </motion.div>
     </div>

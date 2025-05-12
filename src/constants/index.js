@@ -1,3 +1,4 @@
+import { LiaVectorSquareSolid } from "react-icons/lia";
 import project1 from "../assets/projects/project1.png";
 import project2 from "../assets/projects/project2.png";
 import project3 from "../assets/projects/project3.png";
@@ -46,7 +47,7 @@ export const EDUCATION = [
 
 export const PROJECTS = [
   {
-    title: "E-commerce Website",
+    title: "Silque",
     image: project1,
     description:
       "Buy-It -Built a scalable e-commerce platform with Node.js, React, and MongoDB, featuring JWT auth, Redis caching, RESTful APIs, role-based access, and Cloudinary for media storage..",
@@ -59,7 +60,8 @@ export const PROJECTS = [
       "Redis",
       "Cloudinary",
     ],
-    link: "https://github.com/PrateekKumar15/e-commerce",
+    link: "https://github.com/PrateekKumar15/Silque",
+    live: "https://silque-qzmo.onrender.com/",
   },
   {
     title: "News App",
@@ -68,6 +70,7 @@ export const PROJECTS = [
       "NewsApp - Built a dynamic news app with ReactJS and News API, offering categorized news by topic/country, real-time updates, and a responsive, user-friendly interface with filtering options.",
     technologies: ["React", "Bootstrap", "Restful API", "CSS"],
     link: "https://github.com/PrateekKumar15/NewsApp",
+    live: "",
   },
   {
     title: "Landmine Detection System",
@@ -76,13 +79,22 @@ export const PROJECTS = [
       "Built a landmine detection system using Raspberry Pi and an IR thermal sensor, enabling real-time monitoring and data analysis via a network-connected interface for improved safety and efficiency.",
     technologies: ["Python", "Raspberry Pi", "IR thermal sensor"],
     link: "https://github.com/PrateekKumar15/Landmine-Detection-System",
+    live: "",
   },
   {
     title: "Bruce",
     image: project4,
     description:
       "AI-powered PPT builder with Gemini AI, Next.js, and a template marketplace, featuring Google auth and prompt-based slide generation.",
-    technologies: ["Next.js", "React", "Tailwind CSS", "Prisma", "Clerk","Gemini Api"],
-    link: "https://devfolio-2lv.pages.dev/",
+    technologies: [
+      "Next.js",
+      "React",
+      "Tailwind CSS",
+      "Prisma",
+      "Clerk",
+      "Gemini Api",
+    ],
+    link: "https://github.com/PrateekKumar15/bruce/",
+    live: "https://bruceai.vercel.app/",
   },
 ];

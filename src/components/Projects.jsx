@@ -1,6 +1,7 @@
 import { useRef } from "react";
 import { motion } from "framer-motion";
 import { PROJECTS } from "../constants";
+import { FaLaptopCode , FaGithub} from "react-icons/fa";
 
 const Projects = () => {
   const projectRef = useRef(null);
@@ -109,19 +110,36 @@ const Projects = () => {
                       ))}
                     </ul>
                   </div>
+                  
                   <motion.a
                     href={project.link}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="inline-block mt-4  border-b-2  rounded -lg bg-gradient-to-r from-blue-500 via-slate-300 to-cyan-300 hover:bg-gradient-to-l text-transparent bg-clip-text"
+                    className="inline-block mt-4  border-b-2  rounded -lg bg-gradient-to-r from-blue-500 via-slate-300 to-cyan-300 hover:bg-gradient-to-l text-transparent bg-clip-text
+                     border-2 px-2"
                     whileHover={{
-                      scale: 1.2,
+                      scale: 1.1,
                       backgroundColor: "rgb(128, 90, 213)",
                     }}
                     transition={{ duration: 0.3, ease: "easeInOut" }}
                   >
-                    View Project
+                    View Project <FaGithub className="inline-block text-white" />
                   </motion.a>
+                  {project.live && project.live.trim() !== "" && (
+                    <motion.a
+                      href={project.live}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="inline-block mt-4 ml-2 border-b-2  rounded -lg bg-gradient-to-r from-blue-500 via-slate-300 to-cyan-300 hover:bg-gradient-to-l text-transparent bg-clip-text border-2 px-2 "
+                      whileHover={{
+                        scale: 1.1,
+                        backgroundColor: "rgb(128, 90, 213)",
+                      }}
+                      transition={{ duration: 0.3, ease: "easeInOut" }}
+                    >
+                      Live Demo <FaLaptopCode className="inline-block text-white" />
+                    </motion.a>
+                  )}
                 </div>
               </motion.div>
             </motion.div>
