@@ -1,153 +1,158 @@
-import { useRef } from "react";
 import { motion } from "framer-motion";
+import PropTypes from "prop-types";
 import { PROJECTS } from "../constants";
-import { FaLaptopCode , FaGithub} from "react-icons/fa";
+import { FaGithub, FaExternalLinkAlt } from "react-icons/fa";
 
 const Projects = () => {
-  const projectRef = useRef(null);
+  return (
+    <div className="border-b border-neutral-900 pb-4" id="project">
+      {/* Header Section */}
+      <motion.h2
+        className="my-20 text-center text-4xl"
+        initial={{ opacity: 0, y: 20 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.6 }}
+        viewport={{ once: true }}
+      >
+        My <span className="text-neutral-500">Projects</span>
+      </motion.h2>
 
-  // Animation Variants
-  const containerVariants = {
-    hidden: { opacity: 0, y: 50 },
-    visible: {
-      opacity: 1,
-      y: 0,
-      transition: {
-        delayChildren: 0.3,
-        staggerChildren: 0.2,
-        ease: "easeInOut",
-      },
-    },
-  };
+      {/* Projects Grid */}
+      <div className="container mx-auto px-4 space-y-16">
+        {PROJECTS.map((project, i) => (
+          <ProjectCard
+            key={`project_${i}`}
+            project={project}
+            index={i}
+          />
+        ))}
+      </div>
+    </div>
+  );
+};
 
-  const cardVariants = {
-    hidden: { opacity: 0, y: 20 }, // Animate from below
-    visible: {
-      opacity: 1,
-      y: 0,
-      transition: { duration: 0.7, ease: "easeOut" },
-    },
-  };
-
-  const headingVariants = {
-    hidden: { opacity: 0, y: -50 },
-    visible: {
-      opacity: 1,
-      y: 0,
-      transition: { duration: 0.8, ease: "easeInOut" },
-    },
-  };
-
-  const hoverVariants = {
-    hover: {
-      scale: 1.05,
-      y: -10,
-      boxShadow: "0px 10px 20px rgba(0, 0, 0, 0.2)",
-      transition: { duration: 0.3, ease: "easeInOut" },
-    },
-  };
-
+const ProjectCard = ({ project, index }) => {
   return (
     <motion.div
-      className="pt-16"
-      id="project"
-      ref={projectRef}
-      initial="hidden"
-      whileInView="visible"
-      viewport={{ once: true, amount: 0.2 }}
-      variants={containerVariants}
+      className="relative w-full max-w-6xl mx-auto h-auto bg-neutral-900/80 backdrop-blur-sm border border-neutral-800 rounded-2xl p-8"
+      initial={{ opacity: 0, y: 50 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.6, delay: index * 0.1 }}
+      viewport={{ once: true, amount: 0.3 }}
     >
-      <div className="px-4">
-        <motion.h2
-          className="mb-8 text-center text-3xl font-medium lg:text-4xl"
-          variants={headingVariants} // Heading animation
-          whileInView="visible"
-          initial="hidden"
-        >
-          Projects
-        </motion.h2>
-        <div className="flex flex-wrap justify-center">
-          {PROJECTS.map((project, index) => (
-            <motion.div
-              key={index}
-              className="flex w-full flex-col p-4 md:w-1/2 lg:w-1/3"
-              variants={cardVariants}
-              whileInView="visible"
-              initial="hidden"
-            >
-              <motion.div
-                className="flex flex-grow flex-col overflow-hidden rounded-lg border border-purple-300/20"
-                variants={hoverVariants}
-              >
-                <a
-                  href={project.link}
-                  target="_blank"
-                  rel="noopener noreferrer"
+      <div className="flex flex-col lg:flex-row h-full gap-8">
+        {/* Left Content */}
+        <div className="w-full lg:w-1/2 flex flex-col justify-center space-y-6">
+          <motion.h3
+            className="text-3xl lg:text-4xl font-bold"
+            initial={{ opacity: 0, x: -20 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            transition={{ delay: 0.2, duration: 0.6 }}
+            viewport={{ once: true }}
+          >
+            {project.title}
+          </motion.h3>
+
+          <motion.p
+            className="text-neutral-300 text-lg leading-relaxed"
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.3, duration: 0.6 }}
+            viewport={{ once: true }}
+          >
+            {project.description}
+          </motion.p>
+
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.4, duration: 0.6 }}
+            viewport={{ once: true }}
+          >
+            <h4 className="text-white font-semibold mb-3 text-lg">Technologies Used</h4>
+            <div className="flex flex-wrap gap-2">
+              {project.technologies.map((tech, techIndex) => (
+                <motion.span
+                  key={techIndex}
+                  className="bg-neutral-800 border border-neutral-700 rounded-lg px-3 py-1 text-sm font-medium text-neutral-300"
+                  whileHover={{
+                    scale: 1.05,
+                    backgroundColor: "rgb(55, 65, 81)",
+                    color: "rgb(255, 255, 255)"
+                  }}
+                  transition={{ duration: 0.2 }}
                 >
-                  <motion.img
-                    src={project.image}
-                    alt={project.title}
-                    className="h-50 w-full object-cover"
-                    whileHover={{ scale: 1.1 }}
-                    transition={{ duration: 0.3, ease: "easeInOut" }}
-                  />
-                </a>
-                <div className="p-6">
-                  <h3 className="mb-2 text-lg font-medium lg:text-2xl bg-gradient-to-r from-blue-500 via-slate-300 to-cyan-300 bg-clip-text text-transparent">
-                    {project.title}
-                  </h3>
-                  <p className="mb-4 backdrop-blur-md">{project.description}</p>
-                  <div className="mb-4">
-                    <strong>Tech Stack:</strong>
-                    <ul>
-                      {project.technologies.map((tech, techIndex) => (
-                        <li
-                          key={techIndex}
-                          className="mb-1 mr-2 inline-block rounded-full border-2 border-pink-500/30 px-3 py-1 text-sm font-semibold"
-                        >
-                          {tech}
-                        </li>
-                      ))}
-                    </ul>
-                  </div>
-                  
-                  <motion.a
-                    href={project.link}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="inline-block mt-4  border-b-2  rounded -lg bg-gradient-to-r from-blue-500 via-slate-300 to-cyan-300 hover:bg-gradient-to-l text-transparent bg-clip-text
-                     border-2 px-2"
-                    whileHover={{
-                      scale: 1.1,
-                      backgroundColor: "rgb(128, 90, 213)",
-                    }}
-                    transition={{ duration: 0.3, ease: "easeInOut" }}
-                  >
-                    View Project <FaGithub className="inline-block text-white" />
-                  </motion.a>
-                  {project.live && project.live.trim() !== "" && (
-                    <motion.a
-                      href={project.live}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="inline-block mt-4 ml-2 border-b-2  rounded -lg bg-gradient-to-r from-blue-500 via-slate-300 to-cyan-300 hover:bg-gradient-to-l text-transparent bg-clip-text border-2 px-2 "
-                      whileHover={{
-                        scale: 1.1,
-                        backgroundColor: "rgb(128, 90, 213)",
-                      }}
-                      transition={{ duration: 0.3, ease: "easeInOut" }}
-                    >
-                      Live Demo <FaLaptopCode className="inline-block text-white" />
-                    </motion.a>
-                  )}
-                </div>
-              </motion.div>
-            </motion.div>
-          ))}
+                  {tech}
+                </motion.span>
+              ))}
+            </div>
+          </motion.div>
+
+          <motion.div
+            className="flex gap-4 pt-4"
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.5, duration: 0.6 }}
+            viewport={{ once: true }}
+          >
+            <motion.a
+              href={project.link}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex items-center gap-2 bg-gradient-to-r from-blue-500 to-cyan-500 text-white font-semibold rounded-lg px-6 py-3 hover:from-blue-600 hover:to-cyan-600 transition-all duration-300"
+              whileHover={{ scale: 1.05, y: -2 }}
+              whileTap={{ scale: 0.95 }}
+            >
+              <FaGithub className="text-lg" />
+              View Code
+            </motion.a>
+            {project.live && project.live.trim() !== "" && (
+              <motion.a
+                href={project.live}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center gap-2 border-2 border-neutral-600 text-neutral-300 font-semibold rounded-lg px-6 py-3 hover:border-neutral-500 hover:text-white transition-all duration-300"
+                whileHover={{ scale: 1.05, y: -2 }}
+                whileTap={{ scale: 0.95 }}
+              >
+                <FaExternalLinkAlt className="text-lg" />
+                Live Demo
+              </motion.a>
+            )}
+          </motion.div>
+        </div>
+
+        {/* Right Image */}
+        <div className="relative w-full lg:w-1/2 h-64 lg:h-96 rounded-xl overflow-hidden border border-neutral-800">
+          <motion.img
+            src={project.image}
+            alt={project.title}
+            className="w-full h-full object-cover"
+            initial={{ opacity: 0, scale: 1.1 }}
+            whileInView={{ opacity: 1, scale: 1 }}
+            transition={{ delay: 0.2, duration: 0.8 }}
+            viewport={{ once: true }}
+          />
+
+          {/* Image Overlay */}
+          <div className="absolute inset-0 bg-gradient-to-t from-neutral-900/50 via-transparent to-transparent"></div>
         </div>
       </div>
     </motion.div>
   );
+};
+
+// PropTypes validation for ProjectCard component
+ProjectCard.propTypes = {
+  project: PropTypes.shape({
+    title: PropTypes.string.isRequired,
+    description: PropTypes.string.isRequired,
+    image: PropTypes.string.isRequired,
+    link: PropTypes.string.isRequired,
+    live: PropTypes.string,
+    technologies: PropTypes.arrayOf(PropTypes.string).isRequired,
+  }).isRequired,
+  index: PropTypes.number.isRequired,
 };
 
 export default Projects;

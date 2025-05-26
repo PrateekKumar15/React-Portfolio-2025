@@ -1,9 +1,10 @@
-import  { Suspense, lazy, useState, useEffect } from "react";
+import { Suspense, lazy, useState, useEffect, useRef } from "react";
 import { ErrorBoundary } from "react-error-boundary";
 import { motion } from "framer-motion";
+import { ReactLenis } from "lenis/react";
+import { frame, cancelFrame } from "framer-motion";
 import AnimatedCursor from "react-animated-cursor";
 import Preloader from "./components/Preloader";
-
 // Lazy-loaded components 
 const Navbar = lazy(() => import("./components/Navbar"));
 const Hero = lazy(() => import("./components/Hero"));
@@ -103,10 +104,23 @@ const LoadingSpinner = () => {
 
 const App = () => {
   const [isLoading, setIsLoading] = useState(true);
+  const lenisRef = useRef(null);
 
   const handleLoadComplete = () => {
     setIsLoading(false);
   };
+
+  // Framer Motion integration with Lenis
+  useEffect(() => {
+    function update(data) {
+      const time = data.timestamp;
+      lenisRef.current?.lenis?.raf(time);
+    }
+
+    frame.update(update, true);
+
+    return () => cancelFrame(update);
+  }, []);
 
   if (isLoading) {
     return <Preloader onLoadComplete={handleLoadComplete} />;
@@ -118,93 +132,88 @@ const App = () => {
       onReset={() => window.location.reload()}
     >
       <Suspense fallback={<LoadingSpinner />}>
-        <motion.div
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ duration: 0.5 }}
-          className="relative overflow-hidden text-slate-300 antialiased
-          selection:bg-indigo-500/50 selection:text-rose-300 bg-slate-900"
-        >
-          {/* Background Component */}
-        
-          <div className="absolute inset-0 bg-gradient-to-t from-slate-900 to-transparent opacity-70"></div>
-
-          {/* Grid pattern overlay */}
-          <div className="absolute inset-0 bg-[linear-gradient(to_right,rgba(99,102,241,0.05)_1px,transparent_1px),linear-gradient(to_bottom,rgba(99,102,241,0.05)_1px,transparent_1px)] bg-[size:40px_40px] [mask-image:radial-gradient(ellipse_80%_50%_at_50%_0%,#000_70%,transparent_100%)]"></div>
-        
-
-          {/* Main Content with Enhanced Layout */}
-          <div className="container mx-auto px-4 md:px-8 space-y-16 max-w-6xl">
-            <Navbar />
-
-            {/* Sections with Optimized Animations */}
-            {[
-              { id: "hero", component: Hero },
-              { id: "about", component: About },
-              { id: "skills", component: Skills },
-              { id: "projects", component: Projects },
-              { id: "experience", component: Experience },
-              { id: "contact", component: Contact },
-            ].map(({ id, component: Component }) => (
-              <motion.section
-                key={id}
-                id={id}
-                initial={{ opacity: 0, y: 50 }}
-                whileInView={{
-                  opacity: 1,
-                  y: 0,
-                  transition: {
-                    type: "spring",
-                    duration: 0.6,
-                    bounce: 0.2
-                  }
-                }}
-                viewport={{ once: true }}
-                className="relative group"
-              >
-                <Component />
-                <motion.div
-                  initial={{ opacity: 0 }}
-                  whileHover={{ opacity: 1 }}
-                  transition={{ duration: 0.2 }}
-                  className="absolute -inset-2 bg-indigo-900/10 rounded-xl blur-md -z-10"
-                />
-              </motion.section>
-            ))}
-          </div>
-
-          {/* Optimized Animated Cursor */}
-          <AnimatedCursor
-            innerSize={12}
-            outerSize={20}
-            color="99, 102, 241"
-            outerAlpha={0.4}
-            innerScale={1.5}
-            outerScale={3}
-            outerStyle={{
-              border: "2px solid rgba(255, 255, 250, 0.7)",
-              backgroundColor: "transparent",
-              mixBlendMode: "screen",
-            }}
-            innerStyle={{
-              backgroundColor: "#00346d",
-              mixBlendMode: "screen",
-            }}
-            clickables={[
-              "a",
-              'input[type="text"]',
-              'input[type="email"]',
-              'input[type="number"]',
-              'input[type="submit"]',
-              'input[type="image"]',
-              "label[for]",
-              "select",
-              "textarea",
-              "button",
-              ".link",
-            ]}
-          />
-        </motion.div>
+        <ReactLenis root options={{ autoRaf: false }} ref={lenisRef}>
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ duration: 0.5 }}
+            className="relative overflow-x-hidden text-slate-300 antialiased selection:bg-indigo-500/50 selection:text-rose-300 bg-slate-900"
+          >
+            {/* Background Component */}
+            <div className="absolute inset-0 bg-gradient-to-t from-slate-900 to-transparent opacity-70"></div>
+            {/* Grid pattern overlay */}
+            <div className="absolute inset-0 bg-[linear-gradient(to_right,rgba(99,102,241,0.05)_1px,transparent_1px),linear-gradient(to_bottom,rgba(99,102,241,0.05)_1px,transparent_1px)] bg-[size:40px_40px] [mask-image:radial-gradient(ellipse_80%_50%_at_50%_0%,#000_70%,transparent_100%)]"></div>
+            {/* Main Content with Enhanced Layout */}
+            <div className="container mx-auto px-4 md:px-8 space-y-16 max-w-6xl">
+              <Navbar />
+              {/* Sections with Optimized Animations */}
+              {[
+                { id: "hero", component: Hero },
+                { id: "about", component: About },
+                { id: "skills", component: Skills },
+                { id: "projects", component: Projects },
+                { id: "experience", component: Experience },
+                { id: "contact", component: Contact },
+              ].map(({ id, component: Component }) => (
+                <motion.section
+                  key={id}
+                  id={id}
+                  initial={{ opacity: 0, y: 50 }}
+                  whileInView={{
+                    opacity: 1,
+                    y: 0,
+                    transition: {
+                      type: "spring",
+                      duration: 0.6,
+                      bounce: 0.2
+                    }
+                  }}
+                  viewport={{ once: true }}
+                  className="relative group"
+                >
+                  <Component />
+                  <motion.div
+                    initial={{ opacity: 0 }}
+                    whileHover={{ opacity: 1 }}
+                    transition={{ duration: 0.2 }}
+                    className="absolute -inset-2 bg-indigo-900/10 rounded-xl blur-md -z-10"
+                  />
+                </motion.section>
+              ))}
+            </div>
+            {/* Optimized Animated Cursor */}
+            <AnimatedCursor
+              innerSize={12}
+              outerSize={20}
+              color="99, 102, 241"
+              outerAlpha={0.4}
+              innerScale={1.5}
+              outerScale={3}
+              outerStyle={{
+                border: "2px solid rgba(255, 255, 250, 0.7)",
+                backgroundColor: "transparent",
+                mixBlendMode: "screen",
+              }}
+              innerStyle={{
+                backgroundColor: "#00346d",
+                mixBlendMode: "screen",
+              }}
+              clickables={[
+                "a",
+                'input[type="text"]',
+                'input[type="email"]',
+                'input[type="number"]',
+                'input[type="submit"]',
+                'input[type="image"]',
+                "label[for]",
+                "select",
+                "textarea",
+                "button",
+                ".link",
+              ]}
+            />
+          </motion.div>
+        </ReactLenis>
       </Suspense>
     </ErrorBoundary>
   );
