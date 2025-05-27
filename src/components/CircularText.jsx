@@ -1,3 +1,4 @@
+/* eslint-disable react/prop-types */
 import { useEffect, useState } from "react";
 import { motion, useAnimation } from "framer-motion";
 
@@ -23,7 +24,7 @@ const getTransition = (duration, from) => ({
 const CircularText = ({
     text,
     spinDuration = 20,
-    onHover = "goBonkers",
+    onHover = "speedUp",
     className = "",
 }) => {
     const letters = Array.from(text);

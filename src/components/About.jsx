@@ -1,14 +1,20 @@
 import aboutImg from "../assets/about.png";
 import { ABOUT_TEXT } from "../constants";
 import { motion } from "framer-motion";
-
+import LazyImage from "./LazyImage";
+import MetaTags from "./MetaTags";
 const About = () => {
   return (
-    <div className="border-b  border-neutral-900 pb-4">
-      <h2 className="my-20 backdrop-blur-sm text-center text-4xl">
-        About
-        <span className="text-neutral-500">Me</span>
-      </h2>
+  
+    <section className="border-b  border-neutral-900 pb-4" id="about" aria-label="About Prateek Kumar">
+      {/* Only render MetaTags if this is not part of the home page */}
+      <MetaTags section="about" />
+      <header>
+        <h2 className="my-20 backdrop-blur-sm text-center text-4xl md:text-8xl">
+          About
+          <span className="text-neutral-500">Me</span>
+        </h2>
+      </header>
 
       <div className="flex flex-wrap">
         <div className="w-full lg:w-1/2 lg:p-8">
@@ -18,7 +24,14 @@ const About = () => {
             transition={{ duration: 0.5 }}
             className="flex items-center justify-center"
           >
-            <img className="rounded-2xl" src={aboutImg} alt="About Me" />
+            <LazyImage
+              className="rounded-2xl"
+              src={aboutImg}
+              alt="Prateek Kumar working on web development projects - About section"
+              width="400"
+              height="500"
+              placeholder="/placeholder.svg"
+            />
           </motion.div>
         </div>
 
@@ -29,11 +42,18 @@ const About = () => {
           className="w-full lg:w-1/2"
         >
           <div className="flex justify-center lg:justify-start">
-            <p className="my-8 maxw-xl backdrop-blur-sm py-6">{ABOUT_TEXT}</p>
+            <p
+              className="my-8 maxw-xl backdrop-blur-sm py-6"
+              role="text"
+              aria-label="About Prateek Kumar description"
+            >
+              {ABOUT_TEXT}
+            </p>
           </div>
         </motion.div>
       </div>
-    </div>
+    </section>
+   
   );
 };
 

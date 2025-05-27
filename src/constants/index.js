@@ -1,4 +1,3 @@
-import { LiaVectorSquareSolid } from "react-icons/lia";
 import project1 from "../assets/projects/project1.png";
 import project2 from "../assets/projects/project2.png";
 import project3 from "../assets/projects/project3.png";
@@ -23,12 +22,19 @@ export const EDUCATION = [
     technologies: [],
   },
   {
+    year: "01/2025 - 03/2025",
+    role: "Frontend Developer",
+    company: "IITian Vibes",
+    description: `As a Frontend Developer at IITian Vibes, I spearheaded the complete redesign of the frontend interface, enhancing user experience and modernizing the platform's visual appeal. This role involved implementing responsive design principles, optimizing performance, and creating intuitive user interfaces that significantly improved user engagement and satisfaction.`,
+    technologies: ["React", "Redux-Toolkit", "Tailwind", "MUI", "Responsive Design","Google Auth"],
+  },
+  {
     year: "08/2024 - 10/2024",
     role: "Extracurricular Involvement",
     company: "Varchas'24 FC",
     description: `As the Finance Manager and Lead of the Web Development team for Varchas'24 FC, I successfully managed finances and led a team of 10 talented individuals to create and maintain the event's web presence. This experience honed my organizational and teamwork skills, which I bring to every project I undertake.`,
-    technologies: [],
-  },
+    technologies: ["Leadership","Communication","Finance","Management"]
+    },
   {
     year: "2021 - 2022",
     role: "12th Grade",
