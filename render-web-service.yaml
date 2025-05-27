@@ -1,0 +1,11 @@
+# Alternative configuration for web service deployment
+services:
+  - type: web
+    name: react-portfolio
+    env: node
+    buildCommand: npm install && npm run build
+    startCommand: npm start
+    plan: free
+    envVars:
+      - key: NODE_ENV
+        value: production
