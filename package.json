@@ -5,7 +5,11 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
-    "build": "vite build",
+    "build": "node scripts/generateSitemap.js && node scripts/generateRSS.js && vite build",
+    "postbuild": "node scripts/generateSitemap.js && node scripts/generateRSS.js",
+    "generate-sitemap": "node scripts/generateSitemap.js",
+    "generate-rss": "node scripts/generateRSS.js",
+    "generate-feeds": "node scripts/generateSitemap.js && node scripts/generateRSS.js",
     "lint": "eslint .",
     "preview": "vite preview"
   },
@@ -23,9 +27,11 @@
     "react-animated-cursor": "^2.11.2",
     "react-dom": "^18.3.1",
     "react-error-boundary": "^4.1.2",
+    "react-helmet-async": "^2.0.5",
     "react-icons": "^5.4.0",
     "react-router-dom": "^7.6.1",
-    "three": "^0.159.0"
+    "three": "^0.159.0",
+    "web-vitals": "^5.0.1"
   },
   "devDependencies": {
     "@eslint/js": "^9.15.0",
@@ -40,6 +46,7 @@
     "globals": "^15.12.0",
     "postcss": "^8.4.49",
     "tailwindcss": "^3.4.16",
+    "terser": "^5.39.2",
     "vite": "^6.0.1"
   }
 }

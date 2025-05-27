@@ -1,0 +1,25 @@
+User-agent: *
+Allow: /
+
+# Important pages
+Allow: /#about
+Allow: /#skills
+Allow: /#projects
+Allow: /#experience
+Allow: /#contact
+
+# Block development files
+Disallow: /src/
+Disallow: /node_modules/
+Disallow: /*.json$
+
+# Allow important files
+Allow: /robots.txt
+Allow: /sitemap.xml
+Allow: /favicon.ico
+
+# Sitemap location
+Sitemap: https://react-portfolio-2025.onrender.com//sitemap.xml
+
+# Crawl delay
+Crawl-delay: 1
