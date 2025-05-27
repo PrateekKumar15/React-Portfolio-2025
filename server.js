@@ -2,10 +2,11 @@ import { exec } from "child_process";
 
 const port = process.env.PORT || 3000;
 
-// Start the serve command with the correct port
-const command = `npx serve -s dist -p ${port}`;
+// Start the serve command with SPA support (-s flag) and correct port
+const command = `npx serve -s dist -p ${port} --single`;
 
-console.log(`Starting server on port ${port}...`);
+console.log(`Starting SPA server on port ${port}...`);
+console.log(`Command: ${command}`);
 
 const child = exec(command, (error, stdout, stderr) => {
   if (error) {
