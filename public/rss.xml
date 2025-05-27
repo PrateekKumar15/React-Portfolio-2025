@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
-    <title><![CDATA[Prateek Kumar - Full Stack MERN Developer]]></title>
-    <description><![CDATA[Portfolio updates, projects, and insights from Prateek Kumar, a Full Stack MERN Developer and Computer Science student at IIT Jodhpur]]></description>
+    <title><![CDATA[Prateek Kumar - Full Stack Developer]]></title>
+    <description><![CDATA[Portfolio updates, projects, and insights from Prateek Kumar, a Full Stack Developer and Engineering Science student at IIT Jodhpur]]></description>
     <link>https://react-portfolio-2025.onrender.com/</link>
     <language>en-US</language>
     <copyright><![CDATA[© 2025 Prateek Kumar. All rights reserved.]]></copyright>
-    <lastBuildDate>Tue, 27 May 2025 11:49:47 GMT</lastBuildDate>
+    <lastBuildDate>Tue, 27 May 2025 18:57:35 GMT</lastBuildDate>
     <generator>Custom RSS Generator for Portfolio</generator>
     <managingEditor>prateek@example.com (Prateek Kumar)</managingEditor>
     <webMaster>prateek@example.com (Prateek Kumar)</webMaster>
@@ -14,14 +14,14 @@
     <atom:link href="https://react-portfolio-2025.onrender.com//rss.xml" rel="self" type="application/rss+xml"/>
     <image>
       <url>https://react-portfolio-2025.onrender.com//logo.svg</url>
-      <title><![CDATA[Prateek Kumar - Full Stack MERN Developer]]></title>
+      <title><![CDATA[Prateek Kumar - Full Stack Developer]]></title>
       <link>https://react-portfolio-2025.onrender.com/</link>
       <width>144</width>
       <height>144</height>
     </image>
     
     <item>
-      <title><![CDATA[Full Stack E-Commerce Platform]]></title>
+      <title><![CDATA[Silque:Full Stack E-Commerce Platform]]></title>
       <description><![CDATA[A comprehensive e-commerce solution built with MERN stack featuring user authentication, payment integration, and admin dashboard.]]></description>
       <link>https://react-portfolio-2025.onrender.com/#projects</link>
       <guid isPermaLink="false">project-ecommerce-2024</guid>
@@ -30,29 +30,11 @@
       <author>prateek@example.com (Prateek Kumar)</author>
     </item>
     <item>
-      <title><![CDATA[Real-Time Chat Application]]></title>
-      <description><![CDATA[Socket.io powered chat application with real-time messaging, file sharing, and group chat functionality.]]></description>
-      <link>https://react-portfolio-2025.onrender.com/#projects</link>
-      <guid isPermaLink="false">project-chat-app-2024</guid>
-      <pubDate>Wed, 28 Feb 2024 00:00:00 GMT</pubDate>
-      <category><![CDATA[Full Stack Development]]></category>
-      <author>prateek@example.com (Prateek Kumar)</author>
-    </item>
-    <item>
-      <title><![CDATA[Social Media Dashboard]]></title>
-      <description><![CDATA[React-based social media management dashboard with analytics, post scheduling, and engagement tracking.]]></description>
-      <link>https://react-portfolio-2025.onrender.com/#projects</link>
-      <guid isPermaLink="false">project-social-dashboard-2024</guid>
-      <pubDate>Sat, 20 Jan 2024 00:00:00 GMT</pubDate>
-      <category><![CDATA[Frontend Development]]></category>
-      <author>prateek@example.com (Prateek Kumar)</author>
-    </item>
-    <item>
       <title><![CDATA[Portfolio Website Enhancement]]></title>
       <description><![CDATA[Modern, responsive portfolio website with advanced SEO optimization, performance enhancements, and accessibility features.]]></description>
       <link>https://react-portfolio-2025.onrender.com/</link>
       <guid isPermaLink="false">portfolio-update-2024</guid>
-      <pubDate>Tue, 27 May 2025 11:49:47 GMT</pubDate>
+      <pubDate>Tue, 27 May 2025 18:57:35 GMT</pubDate>
       <category><![CDATA[Web Development]]></category>
       <author>prateek@example.com (Prateek Kumar)</author>
     </item>
