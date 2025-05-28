@@ -6,7 +6,7 @@ A personal portfolio website built with React, showcasing my skills, experience,
 **Live Demo**
 -------------
 
-You can view the live demo of the website [here](https://react-portfolio-2025.onrender.com/).
+You can view the live demo of the website [live demo](https://react-portfolio-2025.onrender.com/).
 
 **Features**
 ------------
@@ -43,9 +43,4 @@ To run the project locally, follow these steps:
 ---------------
 
 If you'd like to contribute to the project, please fork the repository and submit a pull request with your changes. Make sure to follow the standard professional guidelines for commit messages and code formatting.
-
-**License**
----------
-
-This project is licensed under the MIT License. See the [LICENSE](LIC--ENSE) file for details.
 
