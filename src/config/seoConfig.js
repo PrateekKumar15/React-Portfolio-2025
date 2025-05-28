@@ -78,8 +78,7 @@ export const TECHNICAL_SKILLS = [
 // ============================================
 export const SEO_SECTIONS = {
   home: {
-    title:
-      "Prateek Kumar - Full Stack Developer Portfolio",
+    title: "Prateek Kumar - Full Stack Developer Portfolio",
     description:
       "Full Stack MERN Developer & Engineering Science Student at IIT Jodhpur. Specialized in React, Node.js, MongoDB, Express. View my projects including e-commerce platforms, news apps, and AI-powered tools.",
     keywords:
@@ -95,8 +94,7 @@ export const SEO_SECTIONS = {
   },
 
   skills: {
-    title:
-      "Technical Skills - React | Node.js, MongoDB",
+    title: "Technical Skills - React | Node.js, MongoDB",
     description:
       "Explore Prateek Kumar's technical expertise in MERN stack development including React.js, Node.js, MongoDB, Express.js, JavaScript, HTML, CSS, and modern web technologies.",
     keywords:
@@ -118,7 +116,6 @@ export const SEO_SECTIONS = {
     keywords:
       "IIT Jodhpur Student, Computer Science Education, BTech Student, Varchas Finance Manager, Academic Experience, Leadership Skills",
   },
-
   contact: {
     title: "Contact Prateek Kumar - Full Stack Developer | Hire",
     description:
@@ -225,6 +222,106 @@ export const generateOrganizationSchema = () => ({
   knowsAbout: TECHNICAL_SKILLS.slice(0, 5), // Top 5 skills
   areaServed: "Worldwide",
   serviceType: "Web Development Services",
+});
+
+// ============================================
+// ADDITIONAL STRUCTURED DATA SCHEMAS
+// ============================================
+
+/**
+ * Generate BreadcrumbList Schema for navigation
+ * @param {string} currentSection - Current page section
+ * @returns {Object} BreadcrumbList schema object
+ */
+export const generateBreadcrumbSchema = (currentSection = "home") => {
+  const breadcrumbs = [
+    {
+      position: 1,
+      name: "Home",
+      item: WEBSITE_CONFIG.baseUrl,
+    },
+  ];
+
+  if (currentSection !== "home") {
+    breadcrumbs.push({
+      position: 2,
+      name: currentSection.charAt(0).toUpperCase() + currentSection.slice(1),
+      item: `${WEBSITE_CONFIG.baseUrl}/${currentSection}`,
+    });
+  }
+
+  return {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    itemListElement: breadcrumbs.map((crumb) => ({
+      "@type": "ListItem",
+      position: crumb.position,
+      name: crumb.name,
+      item: crumb.item,
+    })),
+  };
+};
+
+/**
+ * Generate Portfolio/CreativeWork Schema for projects
+ * @returns {Object} CreativeWork schema object
+ */
+export const generatePortfolioSchema = () => ({
+  "@context": "https://schema.org",
+  "@type": "CreativeWork",
+  name: `${PERSONAL_INFO.name} - Portfolio`,
+  author: {
+    "@type": "Person",
+    name: PERSONAL_INFO.name,
+  },
+  description:
+    "Professional portfolio showcasing full stack web development projects and technical skills",
+  dateCreated: "2024",
+  dateModified: new Date().toISOString().split("T")[0],
+  inLanguage: "en-US",
+  creator: {
+    "@type": "Person",
+    name: PERSONAL_INFO.name,
+  },
+  keywords: TECHNICAL_SKILLS.join(", "),
+  genre: "Portfolio",
+  audience: {
+    "@type": "Audience",
+    audienceType: "Recruiters, Employers, Clients",
+  },
+});
+
+/**
+ * Generate LocalBusiness Schema for contact
+ * @returns {Object} LocalBusiness schema object
+ */
+export const generateLocalBusinessSchema = () => ({
+  "@context": "https://schema.org",
+  "@type": "LocalBusiness",
+  name: `${PERSONAL_INFO.name} - Web Development Services`,
+  description:
+    "Professional web development services specializing in MERN stack applications",
+  url: WEBSITE_CONFIG.baseUrl,
+  telephone: PERSONAL_INFO.phone,
+  email: PERSONAL_INFO.email,
+  address: {
+    "@type": "PostalAddress",
+    addressLocality: PERSONAL_INFO.location.city,
+    addressRegion: PERSONAL_INFO.location.state,
+    addressCountry: "IN",
+  },
+  geo: {
+    "@type": "GeoCoordinates",
+    latitude: "26.2389",
+    longitude: "73.0243",
+  },
+  areaServed: "Worldwide",
+  serviceType: [
+    "Web Development",
+    "Full Stack Development",
+    "MERN Stack Development",
+  ],
+  priceRange: "$$",
 });
 
 // ============================================

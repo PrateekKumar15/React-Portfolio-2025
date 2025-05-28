@@ -2,14 +2,21 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/logo.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- Favicon and Icons -->
+    <link rel="icon" href="/favicon.ico" sizes="any" />
+    <link rel="icon" type="image/svg+xml" href="/logo.svg" />
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+    <link rel="manifest" href="/site.webmanifest" />
 
     <!-- Essential Meta Tags (Minimal Setup) -->
     <!-- Note: All other SEO meta tags are handled by the UnifiedSEO React component -->
 
     <!-- Basic Document Meta -->
     <meta name="author" content="Prateek Kumar" />
+    <meta name="robots" content="index, follow" />
+    <meta name="theme-color" content="#1e293b" />
 
     <!-- Fallback Title (will be overridden by React) -->
     <title>Prateek Kumar - Full Stack MERN Developer | Portfolio</title>
@@ -19,10 +26,182 @@
       name="description"
       content="Full Stack MERN Developer & Engineering Science Student at IIT Jodhpur. Specialized in React, Node.js, MongoDB, Express."
     />
+
+    <!-- Keywords for search engines -->
+    <meta
+      name="keywords"
+      content="Prateek Kumar, Full Stack Developer, MERN Stack Developer, React Developer, Node.js Developer, Web Developer Portfolio, JavaScript Developer, Frontend Developer, Backend Developer, IIT Jodhpur, Web Development, React Projects, Portfolio Website, MongoDB, Express.js, Software Engineer"
+    />
+
+    <!-- Performance optimization -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   </head>
 
   <body>
-    <div id="root"></div>
+    <div id="root">
+      <!-- Fallback content for search engines and users with JavaScript disabled -->
+      <noscript>
+        <header>
+          <h1>Prateek Kumar - Full Stack MERN Developer</h1>
+          <h2>Portfolio Website</h2>
+          <p>
+            Engineering Science Student at Indian Institute of Technology,
+            Jodhpur
+          </p>
+        </header>
+        <main>
+          <section>
+            <h2>About Prateek Kumar</h2>
+            <p>
+              I'm Prateek Kumar, a passionate Full Stack MERN Developer and
+              Engineering Science student at the Indian Institute of Technology,
+              Jodhpur. With a solid foundation in programming languages and
+              frameworks such as HTML, CSS, JavaScript, React, Tailwind CSS,
+              Express and Node.js, I am passionate about crafting responsive and
+              user-friendly websites.
+            </p>
+            <p>
+              I am eager to connect with fellow developers and designers to
+              explore innovative ideas and contribute to impactful projects.
+              Thank you for visiting my portfolio, and I look forward to the
+              opportunity to collaborate!
+            </p>
+          </section>
+
+          <section>
+            <h2>Technical Skills & Expertise</h2>
+            <h3>Frontend Development</h3>
+            <p>
+              HTML5, CSS3, JavaScript (ES6+), TypeScript, React.js, Redux,
+              Next.js, Tailwind CSS, Responsive Design, UI/UX Design
+            </p>
+
+            <h3>Backend Development</h3>
+            <p>
+              Node.js, Express.js, Go Programming, RESTful APIs, GraphQL,
+              Microservices Architecture
+            </p>
+
+            <h3>Database & Cloud</h3>
+            <p>
+              MongoDB, MySQL, PostgreSQL, Firebase, AWS, Vercel, Netlify, Docker
+            </p>
+
+            <h3>Tools & Technologies</h3>
+            <p>
+              Git, GitHub, Postman, VS Code, npm, Webpack, Vite, Jest, Cypress
+            </p>
+          </section>
+
+          <section>
+            <h2>Featured Projects</h2>
+            <article>
+              <h3>E-commerce Platform</h3>
+              <p>
+                Full-stack e-commerce solution built with MERN stack featuring
+                user authentication, payment integration, and admin dashboard.
+              </p>
+            </article>
+            <article>
+              <h3>News Application</h3>
+              <p>
+                Real-time news aggregation app with category filtering, search
+                functionality, and responsive design.
+              </p>
+            </article>
+            <article>
+              <h3>AI-Powered Tools</h3>
+              <p>
+                Innovative web applications leveraging artificial intelligence
+                for enhanced user experiences.
+              </p>
+            </article>
+          </section>
+
+          <section>
+            <h2>Education & Experience</h2>
+            <h3>Indian Institute of Technology, Jodhpur</h3>
+            <p>
+              Bachelor of Technology in Engineering Science | Current Student
+            </p>
+            <p>
+              Relevant coursework: Data Structures, Algorithms, Database
+              Management, Software Engineering, Computer Networks
+            </p>
+
+            <h3>Leadership Experience</h3>
+            <p>
+              Finance Manager at Varchas'24 - IIT Jodhpur's Annual Sports
+              Festival
+            </p>
+            <p>
+              Managed financial operations and budget planning for large-scale
+              sporting events.
+            </p>
+          </section>
+
+          <section>
+            <h2>Contact Information</h2>
+            <p><strong>Email:</strong> prateekkumar72007.com</p>
+            <p><strong>Phone:</strong> +91-8302244250</p>
+            <p><strong>Location:</strong> Jodhpur, Rajasthan, India</p>
+
+            <h3>Connect with me</h3>
+            <p>
+              <strong>LinkedIn:</strong>
+              <a
+                href="https://www.linkedin.com/in/prateek-kumar-m07-d15-y2003/"
+                rel="noopener"
+                >Prateek Kumar LinkedIn Profile</a
+              >
+            </p>
+            <p>
+              <strong>GitHub:</strong>
+              <a href="https://github.com/PrateekKumar15" rel="noopener"
+                >Prateek Kumar GitHub Profile</a
+              >
+            </p>
+            <p>
+              <strong>Instagram:</strong>
+              <a
+                href="https://www.instagram.com/prateek_kumar_15"
+                rel="noopener"
+                >@prateek_kumar_15</a
+              >
+            </p>
+
+            <h3>Professional Services</h3>
+            <p>Available for:</p>
+            <ul>
+              <li>Full Stack Web Development</li>
+              <li>MERN Stack Projects</li>
+              <li>Frontend Development with React</li>
+              <li>Backend API Development</li>
+              <li>Freelance Development Work</li>
+              <li>Internship Opportunities</li>
+            </ul>
+          </section>
+        </main>
+
+        <footer>
+          <p>
+            &copy; 2025 Prateek Kumar. All rights reserved. Portfolio website
+            showcasing full stack development skills and projects.
+          </p>
+        </footer>
+      </noscript>
+
+      <!-- Loading message for when JavaScript is enabled -->
+      <div id="loading-fallback" style="display: none">
+        <h1>Prateek Kumar - Full Stack MERN Developer</h1>
+        <p>Loading portfolio website...</p>
+        <p>
+          Full Stack MERN Developer & Engineering Science Student at IIT
+          Jodhpur. Specialized in React, Node.js, MongoDB, Express.
+        </p>
+      </div>
+    </div>
     <script type="module" src="/src/main.jsx"></script>
   </body>
 </html>

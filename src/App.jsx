@@ -24,6 +24,7 @@ import ServiceWorkerRegistration from "./components/ServiceWorkerRegistration";
 
 // Contact Component (not lazy loaded for faster access)
 import Contact from "./components/Contact";
+import Footer from "./components/Footer";
 
 // Lazy-loaded components for better performance
 const Navbar = lazy(() => import("./components/Navbar"));
@@ -70,8 +71,7 @@ const App = () => {
           FallbackComponent={ErrorFallback}
           onReset={() => window.location.reload()}
         >
-          {/* Centralized SEO Management */}
-          <UnifiedSEO section="home" />
+          {/* Global SEO Components */}
           <SimpleFAQSchema />
 
           {/* Performance & Service Worker */}
@@ -97,14 +97,53 @@ const App = () => {
                 <div className="container mx-auto px-4 md:px-8 space-y-16 max-w-6xl">
                   <Navbar />
                   <Routes>
-                    <Route path="/" element={<Hero />} />
-                    <Route path="/about" element={<About />} />
-                    <Route path="/skills" element={<Skills />} />
-                    <Route path="/projects" element={<Projects />} />
-                    <Route path="/contact" element={<Contact />} />
-                    <Route path="/education" element={<Education />} />
-                    <Route path="*" element={<NotFound />} />
+                    <Route path="/" element={
+                      <>
+                        <UnifiedSEO section="home" />
+                        <Hero />
+                      </>
+                    } />
+                    <Route path="/about" element={
+                      <>
+                        <UnifiedSEO section="about" />
+                        <About />
+                      </>
+                    } />
+                    <Route path="/skills" element={
+                      <>
+                        <UnifiedSEO section="skills" />
+                        <Skills />
+                      </>
+                    } />
+                    <Route path="/projects" element={
+                      <>
+                        <UnifiedSEO section="projects" />
+                        <Projects />
+                      </>
+                    } />
+                    <Route path="/contact" element={
+                      <>
+                        <UnifiedSEO section="contact" />
+                        <Contact />
+                      </>
+                    } />
+                    <Route path="/education" element={
+                      <>
+                        <UnifiedSEO section="education" />
+                        <Education />
+                      </>
+                    } />
+                    
+                    <Route path="*" element={
+                      <>
+                        <UnifiedSEO section="home" customTitle="Page Not Found - Prateek Kumar Portfolio" />
+                        <NotFound />
+                      </>
+                    } />
                   </Routes>
+                  
+                  {/* SEO-Enhanced Footer */}
+                  <Footer />
                 </div>
                 {/* Optimized Animated Cursor */}
                 <AnimatedCursor

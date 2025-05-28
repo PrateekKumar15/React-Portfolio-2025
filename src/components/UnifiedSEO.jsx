@@ -15,6 +15,9 @@ import {
     generatePersonSchema,
     generateWebsiteSchema,
     generateOrganizationSchema,
+    generateBreadcrumbSchema,
+    generatePortfolioSchema,
+    generateLocalBusinessSchema,
     getFullUrl,
     getAssetUrl
 } from '../config/seoConfig';
@@ -28,18 +31,18 @@ const UnifiedSEO = ({
     customUrl
 }) => {
     // Get section-specific SEO data or use custom values
-    const sectionData = SEO_SECTIONS[section] || SEO_SECTIONS.home;
-
-    // Final SEO values (custom overrides section defaults)
+    const sectionData = SEO_SECTIONS[section] || SEO_SECTIONS.home;    // Final SEO values (custom overrides section defaults)
     const seoTitle = customTitle || sectionData.title;
     const seoDescription = customDescription || sectionData.description;
-    const seoKeywords = customKeywords || sectionData.keywords;
-    const seoImage = customImage || getAssetUrl(WEBSITE_CONFIG.assets.logo);
-    const seoUrl = customUrl || getFullUrl(section === 'home' ? '' : `#${section}`);
-    // Generate structured data
+    const seoKeywords = customKeywords || sectionData.keywords; const seoImage = customImage || getAssetUrl(WEBSITE_CONFIG.assets.logo);
+    // Generate proper URLs instead of hash-based for better SEO
+    const seoUrl = customUrl || getFullUrl(section === 'home' ? '' : `/${section}`);    // Generate structured data
     const personSchema = generatePersonSchema();
     const websiteSchema = generateWebsiteSchema();
     const organizationSchema = generateOrganizationSchema();
+    const breadcrumbSchema = generateBreadcrumbSchema(section);
+    const portfolioSchema = generatePortfolioSchema();
+    const localBusinessSchema = section === 'contact' ? generateLocalBusinessSchema() : null;
 
     return (
         <Helmet>
@@ -81,23 +84,59 @@ const UnifiedSEO = ({
             <meta name="twitter:title" content={seoTitle} />
             <meta name="twitter:description" content={seoDescription} />
             <meta name="twitter:image" content={seoImage} />
-            <meta name="twitter:creator" content={WEBSITE_CONFIG.socialMedia.twitter} />
-
-            {/* ========================================== */}
+            <meta name="twitter:creator" content={WEBSITE_CONFIG.socialMedia.twitter} />            {/* ========================================== */}
             {/* ADDITIONAL META TAGS */}
             {/* ========================================== */}
             <meta name="theme-color" content="#1e293b" />
             <meta name="msapplication-TileColor" content="#1e293b" />
+            <meta name="apple-mobile-web-app-capable" content="yes" />
+            <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+            <meta name="apple-mobile-web-app-title" content={`${PERSONAL_INFO.name} Portfolio`} />
+            <meta name="mobile-web-app-capable" content="yes" />
+            <meta name="application-name" content={`${PERSONAL_INFO.name} Portfolio`} />
+
+            {/* Enhanced SEO Meta Tags */}
+            <meta name="format-detection" content="telephone=no" />
+            <meta name="referrer" content="strict-origin-when-cross-origin" />
+            <meta httpEquiv="X-Content-Type-Options" content="nosniff" />
+            <meta httpEquiv="X-Frame-Options" content="DENY" />
+            <meta httpEquiv="X-XSS-Protection" content="1; mode=block" />
+
+            {/* Geographic and Localization */}
+            <meta name="geo.region" content="IN-RJ" />
+            <meta name="geo.placename" content="Jodhpur, Rajasthan" />
+            <meta name="geo.position" content="26.2389;73.0243" />
+            <meta name="ICBM" content="26.2389, 73.0243" />
+
+            {/* Professional and Business */}
+            <meta name="classification" content="Portfolio" />
+            <meta name="category" content="Web Development, Software Engineering" />
+            <meta name="coverage" content="Worldwide" />
+            <meta name="target" content="Recruiters, Employers, Clients" />
+            <meta name="subject" content="Full Stack Web Development Portfolio" />
             {/* ========================================== */}
             {/* CANONICAL URL & ALTERNATE LINKS */}
             {/* ========================================== */}
             <link rel="canonical" href={seoUrl} />
-            <link rel="alternate" hrefLang="en" href={seoUrl} />
-
-            {/* ========================================== */}
+            <link rel="alternate" hrefLang="en" href={seoUrl} />            {/* ========================================== */}
             {/* FAVICON & ICONS */}
             {/* ========================================== */}
+            <link rel="icon" href="/favicon.ico" sizes="any" />
             <link rel="icon" type="image/svg+xml" href={WEBSITE_CONFIG.assets.favicon} />
+            <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
+            <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
+            <link rel="icon" type="image/png" sizes="96x96" href="/favicon-96x96.png" />
+
+            {/* Apple Touch Icons */}
+            <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+            <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+
+            {/* Web App Manifest */}
+            <link rel="manifest" href="/site.webmanifest" />
+
+            {/* Microsoft Tiles */}
+            <meta name="msapplication-TileImage" content="/icon-192x192.png" />
+            <meta name="msapplication-config" content="/browserconfig.xml" />
 
             {/* ========================================== */}
             {/* PERFORMANCE OPTIMIZATION */}
@@ -133,9 +172,7 @@ const UnifiedSEO = ({
                     <meta property="business:contact_data:email" content={PERSONAL_INFO.email} />
                     <meta property="business:contact_data:website" content={WEBSITE_CONFIG.baseUrl} />
                 </>
-            )}
-
-            {/* ========================================== */}
+            )}            {/* ========================================== */}
             {/* JSON-LD STRUCTURED DATA */}
             {/* ========================================== */}
 
@@ -153,6 +190,23 @@ const UnifiedSEO = ({
             <script type="application/ld+json">
                 {JSON.stringify(organizationSchema, null, 0)}
             </script>
+
+            {/* Breadcrumb Schema */}
+            <script type="application/ld+json">
+                {JSON.stringify(breadcrumbSchema, null, 0)}
+            </script>
+
+            {/* Portfolio Schema */}
+            <script type="application/ld+json">
+                {JSON.stringify(portfolioSchema, null, 0)}
+            </script>
+
+            {/* Local Business Schema (for contact page) */}
+            {localBusinessSchema && (
+                <script type="application/ld+json">
+                    {JSON.stringify(localBusinessSchema, null, 0)}
+                </script>
+            )}
         </Helmet>
     );
 };
@@ -161,7 +215,7 @@ const UnifiedSEO = ({
 // PROP TYPES VALIDATION
 // ============================================
 UnifiedSEO.propTypes = {
-    section: PropTypes.oneOf(['home', 'about', 'skills', 'projects', 'education', 'contact']),
+    section: PropTypes.oneOf(['home', 'about', 'skills', 'projects', 'education', 'contact', 'blog']),
     customTitle: PropTypes.string,
     customDescription: PropTypes.string,
     customKeywords: PropTypes.string,
