@@ -1,4 +1,5 @@
 import { exec } from "child_process";
+import process from "process";
 
 const port = process.env.PORT || 3000;
 
