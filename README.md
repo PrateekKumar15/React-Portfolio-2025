@@ -6,7 +6,7 @@ A personal portfolio website built with React, showcasing my skills, experience,
 **Live Demo**
 -------------
 
-You can view the live demo of the website [live demo](https://react-portfolio-2025.onrender.com/).
+You can view the live demo of the website [live demo](https://prateek-protfolio-2025.vercel.app/).
 
 **Features**
 ------------

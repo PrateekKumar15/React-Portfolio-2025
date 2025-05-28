@@ -1,11 +1,13 @@
 import { EDUCATION } from "../constants";
 import { motion } from "framer-motion";
-import MetaTags from "./MetaTags";
+import UnifiedSEO from "./UnifiedSEO";
+
 const Experience = () => {
   return (
-   
     <section className="border-b border-neutral-900 pb-4" id="education" aria-label="Education and Experience">
-        <MetaTags section="education" />
+      {/* SEO meta tags for Education section */}
+      <UnifiedSEO section="education" />
+
       <header>
         <motion.h2
           whileInView={{ opacity: 1, y: 0 }}
@@ -66,7 +68,7 @@ const Experience = () => {
         })}
       </div>
     </section>
-   
+
   );
 };
 

@@ -1,7 +1,7 @@
 import { useInView } from "framer-motion";
 import { motion } from "framer-motion";
 import { useRef, useState } from "react";
-import MetaTags from "./MetaTags";
+import UnifiedSEO from "./UnifiedSEO";
 import emailjs from 'emailjs-com';
 import PropTypes from 'prop-types'; // Import PropTypes
 
@@ -219,7 +219,9 @@ const Contact = () => {
       id="contact"
       aria-label="Contact Information and Form"
     >
-      <MetaTags section="contact" />
+      {/* SEO meta tags for Contact section */}
+      <UnifiedSEO section="contact" />
+
       <div className="w-full p-4">
         <motion.form
           ref={formRef}

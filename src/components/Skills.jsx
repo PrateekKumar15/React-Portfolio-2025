@@ -9,7 +9,7 @@ import { VscCode } from "react-icons/vsc";
 import { FaChartBar } from "react-icons/fa";
 import { motion, AnimatePresence } from "framer-motion";
 import { useState } from "react";
-import MetaTags from "./MetaTags";
+import UnifiedSEO from "./UnifiedSEO";
 
 
 const iconVariants = (duration) => ({
@@ -112,11 +112,11 @@ const Skills = () => {
     }
   };
 
-  const allSkills = Object.values(skillCategories).flatMap(category => 
+  const allSkills = Object.values(skillCategories).flatMap(category =>
     category.skills.map(skill => ({ ...skill, category: category.title.toLowerCase() }))
   );
 
-  const filteredSkills = activeCategory === "all" ? allSkills : 
+  const filteredSkills = activeCategory === "all" ? allSkills :
     skillCategories[activeCategory]?.skills || [];
 
   const categories = [
@@ -130,8 +130,8 @@ const Skills = () => {
 
   return (
     <section className="border-b border-neutral-800 pb-24" id="skills" aria-label="Technical Skills">
-      <MetaTags section="skills" />
-      
+      <UnifiedSEO section="skills" />
+
       {/* Header */}
       <header className="text-center mb-16">
         <motion.h2
@@ -163,11 +163,10 @@ const Skills = () => {
           <button
             key={key}
             onClick={() => setActiveCategory(key)}
-            className={`px-6 py-3 rounded-full border-2 transition-all duration-300 flex items-center gap-2 ${
-              activeCategory === key
+            className={`px-6 py-3 rounded-full border-2 transition-all duration-300 flex items-center gap-2 ${activeCategory === key
                 ? "border-cyan-400 bg-cyan-400/10 text-cyan-400"
                 : "border-neutral-600 text-neutral-400 hover:border-neutral-500 hover:text-neutral-300"
-            }`}
+              }`}
           >
             <span>{icon}</span>
             <span className="font-medium">{label}</span>

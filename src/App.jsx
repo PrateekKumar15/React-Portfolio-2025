@@ -6,27 +6,31 @@ import { motion } from "framer-motion";
 import { ReactLenis } from "lenis/react";
 import { frame, cancelFrame } from "framer-motion";
 import AnimatedCursor from "react-animated-cursor";
+
+// Core Components
 import Preloader from "./components/Preloader";
-import SEOHead from "./components/SEOHead";
+import ErrorFallback from "./components/ErrorFallback";
+import LoadingSpinner from "./components/LoadingSpinner";
+
+// SEO Components (Centralized)
+import UnifiedSEO from "./components/UnifiedSEO";
+import SimpleFAQSchema from "./components/SimpleFAQSchema";
+
+// Performance & Service Worker
 import PreloadHints from "./components/PreloadHints";
 import PerformanceMonitor from "./components/PerformanceMonitor";
 import SEOAnalytics from "./components/SEOAnalytics";
 import ServiceWorkerRegistration from "./components/ServiceWorkerRegistration";
-import CanonicalURL from "./components/CanonicalURL";
-import FAQSchema from "./components/FAQSchema";
-import Contact from "./components/Contact";
-import PersonStructuredData from "./components/PersonStructuredData";
-import ErrorFallback from "./components/ErrorFallback"; // Import ErrorFallback
-import LoadingSpinner from "./components/LoadingSpinner"; // Import LoadingSpinner
 
-// Lazy-loaded components 
+// Contact Component (not lazy loaded for faster access)
+import Contact from "./components/Contact";
+
+// Lazy-loaded components for better performance
 const Navbar = lazy(() => import("./components/Navbar"));
 const Hero = lazy(() => import("./components/Hero"));
 const About = lazy(() => import("./components/About"));
 const Skills = lazy(() => import("./components/Skills"));
 const Projects = lazy(() => import("./components/Projects"));
-// const Contact = lazy(() => import("./components/Contact"));
-
 const Education = lazy(() => import("./components/Education"));
 const NotFound = lazy(() => import("./components/NotFound"));
 
@@ -66,14 +70,16 @@ const App = () => {
           FallbackComponent={ErrorFallback}
           onReset={() => window.location.reload()}
         >
-          <SEOHead />
-          <CanonicalURL />
-          <FAQSchema />
-          <PersonStructuredData />
+          {/* Centralized SEO Management */}
+          <UnifiedSEO section="home" />
+          <SimpleFAQSchema />
+
+          {/* Performance & Service Worker */}
           <PreloadHints />
           <PerformanceMonitor />
           <SEOAnalytics />
           <ServiceWorkerRegistration />
+
           <Suspense fallback={<LoadingSpinner />}>
             <ReactLenis root options={{ autoRaf: false }} ref={lenisRef}>
               <motion.div
@@ -83,7 +89,7 @@ const App = () => {
                 className="relative overflow-x-hidden text-slate-300 antialiased selection:bg-indigo-500/50 selection:text-rose-300 bg-slate-900"
               >
                 {/* Background Component */}
-               
+
                 {/* Grid pattern overlay */}
                 {/* <div className="absolute -z-10
                  inset-0 bg-[linear-gradient(to_right,rgba(99,102,241,0.05)_1px,transparent_1px),linear-gradient(to_bottom,rgba(99,102,241,0.05)_1px,transparent_1px)] bg-[size:40px_40px] [mask-image:radial-gradient(ellipse_80%_50%_at_50%_0%,#000_70%,transparent_100%)]"></div> */}

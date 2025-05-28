@@ -2,13 +2,13 @@ import aboutImg from "../assets/about.png";
 import { ABOUT_TEXT } from "../constants";
 import { motion } from "framer-motion";
 import LazyImage from "./LazyImage";
-import MetaTags from "./MetaTags";
+import UnifiedSEO from "./UnifiedSEO";
+
 const About = () => {
   return (
-  
     <section className="border-b  border-neutral-900 pb-4" id="about" aria-label="About Prateek Kumar">
-      {/* Only render MetaTags if this is not part of the home page */}
-      <MetaTags section="about" />
+      {/* SEO meta tags for About section */}
+      <UnifiedSEO section="about" />
       <header>
         <h2 className="my-20 backdrop-blur-sm text-center text-4xl md:text-8xl">
           About
@@ -53,7 +53,7 @@ const About = () => {
         </motion.div>
       </div>
     </section>
-   
+
   );
 };
 

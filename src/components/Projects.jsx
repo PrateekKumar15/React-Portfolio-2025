@@ -3,14 +3,15 @@ import PropTypes from "prop-types";
 import { PROJECTS } from "../constants";
 import { FaGithub, FaExternalLinkAlt } from "react-icons/fa";
 import LazyImage from "./LazyImage";
-import MetaTags from "./MetaTags";
+import UnifiedSEO from "./UnifiedSEO";
 
 const Projects = () => {
   return (
-    
     <section className="border-b border-neutral-900 pb-4" id="projects" aria-label="Portfolio Projects">
+      {/* SEO meta tags for Projects section */}
+      <UnifiedSEO section="projects" />
+
       {/* Header Section */}
-        <MetaTags section="projects" />
       <header>
         <motion.h2
           className="my-20 text-center text-4xl md:text-8xl"
@@ -34,7 +35,7 @@ const Projects = () => {
         ))}
       </div>
     </section>
-    
+
   );
 };
 
