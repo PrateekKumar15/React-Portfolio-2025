@@ -3,7 +3,7 @@ import { useLocation } from 'react-router-dom';
 
 const CanonicalURL = () => {
     const location = useLocation();
-    const baseUrl = 'https://react-portfolio-2025.onrender.com/'; // Replace with your actual domain
+    const baseUrl = 'https://prateek-protfolio-2025.vercel.app'; // Replace with your actual domain
 
     // Generate canonical URL based on current route
     const getCanonicalUrl = () => {
@@ -14,15 +14,15 @@ const CanonicalURL = () => {
             case '/':
                 return baseUrl;
             case '/about':
-                return `${baseUrl}#about`;
+                return `${baseUrl}/about`;
             case '/skills':
-                return `${baseUrl}#skills`;
+                return `${baseUrl}/skills`;
             case '/projects':
-                return `${baseUrl}#projects`;
+                return `${baseUrl}/projects`;
             case '/education':
-                return `${baseUrl}#education`;
+                return `${baseUrl}/education`;
             case '/contact':
-                return `${baseUrl}#contact`;
+                return `${baseUrl}/contact`;
             default:
                 return `${baseUrl}${path}`;
         }

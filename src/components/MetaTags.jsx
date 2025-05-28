@@ -40,7 +40,7 @@ const MetaTags = ({
 
     const meta = section ? sectionMeta[section] : {
         title: title || "Prateek Kumar - Full Stack MERN Developer Portfolio",
-        description: description || "Full Stack MERN Developer & Computer Science Student at IIT Jodhpur",
+        description: description || "Full Stack MERN Developer & Engineering Science Student at IIT Jodhpur",
         keywords: keywords || "Full Stack Developer, MERN Stack, React Developer, Node.js"
     };
 

@@ -7,7 +7,7 @@ const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
 // Configuration
-const siteUrl = "https://react-portfolio-2025.onrender.com/";
+const siteUrl = "https://prateek-protfolio-2025.vercel.app";
 const title = "Prateek Kumar - Full Stack Developer";
 const description =
   "Portfolio updates, projects, and insights from Prateek Kumar, a Full Stack Developer and Engineering Science student at IIT Jodhpur";
@@ -20,7 +20,7 @@ const portfolioItems = [
     title: "Silque:Full Stack E-Commerce Platform",
     description:
       "A comprehensive e-commerce solution built with MERN stack featuring user authentication, payment integration, and admin dashboard.",
-    link: `${siteUrl}#projects`,
+    link: `${siteUrl}/projects`,
     guid: "project-ecommerce-2024",
     pubDate: new Date("2024-03-15").toUTCString(),
     category: "Web Development",
@@ -47,7 +47,7 @@ function generateRSSFeed() {
       <guid isPermaLink="false">${item.guid}</guid>
       <pubDate>${item.pubDate}</pubDate>
       <category><![CDATA[${item.category}]]></category>
-      <author>prateek@example.com (Prateek Kumar)</author>
+      <author>prateekkumar72007@gmail.com (Prateek Kumar)</author>
     </item>`
     )
     .join("");

@@ -2,7 +2,7 @@ import fs from "fs";
 import path from "path";
 import process from "node:process";
 
-const baseUrl = "https://react-portfolio-2025.onrender.com/"; // Update with your actual domain
+const baseUrl = "https://prateek-protfolio-2025.vercel.app"; // Update with your actual domain
 const currentDate = new Date().toISOString();
 
 function generateSitemap() {
@@ -19,7 +19,7 @@ function generateSitemap() {
       ],
     },
     {
-      loc: baseUrl + "/#about",
+      loc: baseUrl + "/about",
       priority: "0.8",
       changefreq: "monthly",
       images: [
@@ -31,13 +31,13 @@ function generateSitemap() {
       ],
     },
     {
-      loc: baseUrl + "/#skills",
+      loc: baseUrl + "/skills",
       priority: "0.8",
       changefreq: "monthly",
       title: "Technical Skills - React, Node.js, MongoDB, JavaScript",
     },
     {
-      loc: baseUrl + "/#projects",
+      loc: baseUrl + "/projects",
       priority: "0.9",
       changefreq: "weekly",
       title: "Portfolio Projects - MERN Stack Applications",
@@ -61,13 +61,13 @@ function generateSitemap() {
       ],
     },
     {
-      loc: baseUrl + "/#experience",
+      loc: baseUrl + "/experience",
       priority: "0.7",
       changefreq: "monthly",
       title: "Education - IIT Jodhpur Computer Science Engineering",
     },
     {
-      loc: baseUrl + "/#contact",
+      loc: baseUrl + "/contact",
       priority: "0.6",
       changefreq: "monthly",
       title: "Contact Prateek Kumar - Full Stack Developer",
