@@ -116,39 +116,11 @@ const Contact = () => {
       setFormErrors({}); // Clear any existing errors
     } catch (error) {
       console.error('Email sending failed:', error);
-      // Fallback for service worker background sync (if implemented and desired)
-      if ('serviceWorker' in navigator && 'sync' in window.ServiceWorkerRegistration.prototype) {
-        try {
-          const formData = {
-            name: nameRef.current?.value,
-            email: emailRef.current?.value,
-            message: messageRef.current?.value,
-            timestamp: new Date().toISOString()
-          };
-          const cache = await caches.open('form-data');
-          await cache.put('/form-data', new Response(JSON.stringify(formData)));
-          const registration = await navigator.serviceWorker.ready;
-          await registration.sync.register('contact-form');
-          setFormStatus({
-            success: false,
-            error: true,
-            message: 'Connection issue. Your message will be sent when connection is restored.'
-          });
-        } catch (syncError) {
-          console.error('Background sync setup failed:', syncError);
-          setFormStatus({
-            success: false,
-            error: true,
-            message: 'Failed to send message. Please try again or contact me directly.'
-          });
-        }
-      } else {
-        setFormStatus({
-          success: false,
-          error: true,
-          message: 'Failed to send message. Please try again later.'
-        });
-      }
+      setFormStatus({
+        success: false,
+        error: true,
+        message: 'Failed to send message. Please try again later.'
+      });
     } finally {
       setLoading(false);
     }

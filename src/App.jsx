@@ -20,7 +20,6 @@ import SimpleFAQSchema from "./components/SimpleFAQSchema";
 import PreloadHints from "./components/PreloadHints";
 import PerformanceMonitor from "./components/PerformanceMonitor";
 import SEOAnalytics from "./components/SEOAnalytics";
-import ServiceWorkerRegistration from "./components/ServiceWorkerRegistration";
 
 // Contact Component (not lazy loaded for faster access)
 import Contact from "./components/Contact";
@@ -78,7 +77,6 @@ const App = () => {
           <PreloadHints />
           <PerformanceMonitor />
           <SEOAnalytics />
-          <ServiceWorkerRegistration />
 
           <Suspense fallback={<LoadingSpinner />}>
             <ReactLenis root options={{ autoRaf: false }} ref={lenisRef}>
@@ -141,9 +139,9 @@ const App = () => {
                       </>
                     } />
                   </Routes>
-                  
+                  <Footer/>
                   {/* SEO-Enhanced Footer */}
-                  <Footer />
+                  
                 </div>
                 {/* Optimized Animated Cursor */}
                 <AnimatedCursor
