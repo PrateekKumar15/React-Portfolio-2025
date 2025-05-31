@@ -131,7 +131,7 @@ const App = () => {
                         <Education />
                       </>
                     } />
-                    
+
                     <Route path="*" element={
                       <>
                         <UnifiedSEO section="home" customTitle="Page Not Found - Prateek Kumar Portfolio" />
@@ -139,9 +139,9 @@ const App = () => {
                       </>
                     } />
                   </Routes>
-                  <Footer/>
+                  <Footer />
                   {/* SEO-Enhanced Footer */}
-                  
+
                 </div>
                 {/* Optimized Animated Cursor */}
                 <AnimatedCursor
