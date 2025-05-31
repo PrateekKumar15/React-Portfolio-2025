@@ -5,7 +5,7 @@ Allow: /
 Allow: /#about
 Allow: /#skills
 Allow: /#projects
-Allow: /#education
+Allow: /#experience
 Allow: /#contact
 
 # Block development files

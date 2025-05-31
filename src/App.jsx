@@ -1,4 +1,4 @@
-import { Suspense, lazy, useState, useEffect, useRef } from "react";
+import { Suspense, useState, useEffect, useRef } from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import { ErrorBoundary } from "react-error-boundary";
 import { HelmetProvider } from "react-helmet-async";
@@ -21,18 +21,16 @@ import PreloadHints from "./components/PreloadHints";
 import PerformanceMonitor from "./components/PerformanceMonitor";
 import SEOAnalytics from "./components/SEOAnalytics";
 
-// Contact Component (not lazy loaded for faster access)
+// Import all components directly to fix dynamic import issues
 import Contact from "./components/Contact";
 import Footer from "./components/Footer";
-
-// Lazy-loaded components for better performance
-const Navbar = lazy(() => import("./components/Navbar"));
-const Hero = lazy(() => import("./components/Hero"));
-const About = lazy(() => import("./components/About"));
-const Skills = lazy(() => import("./components/Skills"));
-const Projects = lazy(() => import("./components/Projects"));
-const Education = lazy(() => import("./components/Education"));
-const NotFound = lazy(() => import("./components/NotFound"));
+import Navbar from "./components/Navbar";
+import Hero from "./components/Hero";
+import About from "./components/About";
+import Skills from "./components/Skills";
+import Projects from "./components/Projects";
+import Education from "./components/Education";
+import NotFound from "./components/NotFound";
 
 const App = () => {
   // Check if the app has already been loaded once in this session

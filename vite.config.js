@@ -11,12 +11,8 @@ export default defineConfig({
     outDir: "dist",
     rollupOptions: {
       output: {
-        manualChunks: {
-          vendor: ["react", "react-dom"],
-          animations: ["framer-motion", "lottie-react"],
-          icons: ["react-icons"],
-          utils: ["emailjs-com", "react-helmet-async"],
-        },
+        // Simplified chunk splitting to avoid dynamic import issues
+        manualChunks: undefined,
       },
     },
     terserOptions: {
