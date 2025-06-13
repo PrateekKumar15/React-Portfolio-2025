@@ -2,7 +2,7 @@ import { useInView } from "framer-motion";
 import { motion } from "framer-motion";
 import { useRef, useState } from "react";
 import UnifiedSEO from "./UnifiedSEO";
-import emailjs from 'emailjs-com';
+import emailjs from '@emailjs/browser'; 
 import PropTypes from 'prop-types'; // Import PropTypes
 
 const listVariant = {
