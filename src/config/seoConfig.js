@@ -33,7 +33,7 @@ export const PERSONAL_INFO = {
 // ============================================
 export const WEBSITE_CONFIG = {
   // Production website URL
-  baseUrl: "https://prateek-protfolio-2025.vercel.app",
+  baseUrl: "https://prateek-portfolio-2025.vercel.app",
 
   // Social media profiles
   socialMedia: {

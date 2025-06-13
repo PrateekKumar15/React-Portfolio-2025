@@ -7,7 +7,7 @@ const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
 // Configuration
-const siteUrl = "https://prateek-protfolio-2025.vercel.app";
+const siteUrl = "https://prateek-portfolio-2025.vercel.app";
 const title = "Prateek Kumar - Full Stack Developer";
 const description =
   "Portfolio updates, projects, and insights from Prateek Kumar, a Full Stack Developer and Engineering Science student at IIT Jodhpur";

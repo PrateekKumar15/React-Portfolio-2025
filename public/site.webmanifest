@@ -1,7 +1,7 @@
 {
-  "name": "Prateek Kumar - Full Stack MERN Developer Portfolio",
+  "name": "Prateek Kumar - Full Stack Developer Portfolio",
   "short_name": "Prateek Portfolio",
-  "description": "Full Stack MERN Developer & Engineering Science Student at IIT Jodhpur. Specialized in React, Node.js, MongoDB, Express.",
+  "description": "Full Stack Developer & Engineering Science Student at IIT Jodhpur. Specialized in React, Node.js, MongoDB, Express.",
   "start_url": "/",
   "display": "standalone",
   "background_color": "#0f172a",
