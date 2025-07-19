@@ -2,13 +2,18 @@ import fs from "fs";
 import path from "path";
 import { fileURLToPath } from "url";
 import process from "node:process";
+import { config } from "dotenv";
+
+// Load environment variables from .env file
+config();
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
 // Configuration
 const siteUrl =
-  import.meta.env.VITE_REACT_APP_BASE_URL || "https://prateek-portfolio-2025.vercel.app";
+  process.env.VITE_REACT_APP_BASE_URL ||
+  "https://prateek-portfolio-2025.vercel.app";
 const title = "Prateek Kumar - Full Stack Developer";
 const description =
   "Portfolio updates, projects, and insights from Prateek Kumar, a Full Stack Developer and Engineering Science student at IIT Jodhpur";
