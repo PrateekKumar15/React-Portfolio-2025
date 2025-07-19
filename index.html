@@ -202,6 +202,27 @@
         </p>
       </div>
     </div>
-    <script type="module" src="/src/main.jsx"></script>
+    
+    <!-- JavaScript Error Logging for debugging -->
+    <script>
+      window.onerror = function(msg, url, lineNo, columnNo, error) {
+        console.error('Error: ' + msg + '\nURL: ' + url + '\nLine: ' + lineNo + '\nColumn: ' + columnNo + '\nError object: ' + JSON.stringify(error));
+        return false;
+      };
+      
+      // Show loading fallback immediately
+      document.addEventListener('DOMContentLoaded', function() {
+        const loadingFallback = document.getElementById('loading-fallback');
+        if (loadingFallback) {
+          loadingFallback.style.display = 'block';
+          // Hide it after 10 seconds if React hasn't loaded
+          setTimeout(function() {
+            if (loadingFallback.style.display !== 'none') {
+              loadingFallback.innerHTML = '<h1>Loading Issue Detected</h1><p>Please check the browser console for errors or refresh the page.</p>';
+            }
+          }, 10000);
+        }
+      });
+    </script>
   </body>
 </html>

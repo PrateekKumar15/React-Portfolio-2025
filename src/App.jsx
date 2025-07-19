@@ -39,6 +39,17 @@ const App = () => {
   });
   const lenisRef = useRef(null);
 
+  // Handle GitHub Pages routing
+  useEffect(() => {
+    // Check if this is a GitHub Pages redirect
+    const query = window.location.search;
+    if (query.slice(1).indexOf('/?/') === 0) {
+      // Remove the redirect parameter and navigate to the intended path
+      const route = query.slice(4).replace(/~and~/g, '&');
+      window.history.replaceState(null, null, route);
+    }
+  }, []);
+
   const handleLoadComplete = () => {
     setIsLoading(false);
     // Mark the app as loaded for this session
