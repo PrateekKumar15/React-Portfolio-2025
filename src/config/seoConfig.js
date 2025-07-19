@@ -33,11 +33,12 @@ export const PERSONAL_INFO = {
 // ============================================
 export const WEBSITE_CONFIG = {
   // Production website URL
-  baseUrl: "https://prateek-portfolio-2025.vercel.app",
+  baseUrl:
+    import.meta.env.VITE_REACT_APP_BASE_URL || "https://prateek-portfolio-2025.vercel.app",
 
   // Social media profiles
   socialMedia: {
-    linkedin: "https://www.linkedin.com/in/prateek-kumar-m07-d15-y2003/",
+    linkedin: "https://www.linkedin.com/in/prateekkumar15",
     github: "https://github.com/PrateekKumar15",
     instagram: "https://www.instagram.com/prateek_kumar_15",
     twitter: "@prateek_kumar_15",
