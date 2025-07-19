@@ -2,7 +2,8 @@ import fs from "fs";
 import path from "path";
 import process from "node:process";
 
-const baseUrl = "https://prateek-portfolio-2025.vercel.app"; // Update with your actual domain
+const baseUrl =
+  import.meta.env.VITE_REACT_APP_BASE_URL || "https://prateek-portfolio-2025.vercel.app"; // Update with your actual domain
 const currentDate = new Date().toISOString();
 
 function generateSitemap() {
