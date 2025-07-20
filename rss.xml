@@ -3,19 +3,19 @@
   <channel>
     <title><![CDATA[Prateek Kumar - Full Stack Developer]]></title>
     <description><![CDATA[Portfolio updates, projects, and insights from Prateek Kumar, a Full Stack Developer and Engineering Science student at IIT Jodhpur]]></description>
-    <link>https://prateek-portfolio-2025.vercel.app</link>
+    <link>https://prateek.me</link>
     <language>en-US</language>
     <copyright><![CDATA[© 2025 Prateek Kumar. All rights reserved.]]></copyright>
-    <lastBuildDate>Sat, 19 Jul 2025 10:52:49 GMT</lastBuildDate>
+    <lastBuildDate>Sun, 20 Jul 2025 20:21:14 GMT</lastBuildDate>
     <generator>Custom RSS Generator for Portfolio</generator>
     <managingEditor>prateek@example.com (Prateek Kumar)</managingEditor>
     <webMaster>prateek@example.com (Prateek Kumar)</webMaster>
     <ttl>1440</ttl>
-    <atom:link href="https://prateek-portfolio-2025.vercel.app/rss.xml" rel="self" type="application/rss+xml"/>
+    <atom:link href="https://prateek.me/rss.xml" rel="self" type="application/rss+xml"/>
     <image>
-      <url>https://prateek-portfolio-2025.vercel.app/logo.svg</url>
+      <url>https://prateek.me/logo.svg</url>
       <title><![CDATA[Prateek Kumar - Full Stack Developer]]></title>
-      <link>https://prateek-portfolio-2025.vercel.app</link>
+      <link>https://prateek.me</link>
       <width>144</width>
       <height>144</height>
     </image>
@@ -23,7 +23,7 @@
     <item>
       <title><![CDATA[Silque:Full Stack E-Commerce Platform]]></title>
       <description><![CDATA[A comprehensive e-commerce solution built with MERN stack featuring user authentication, payment integration, and admin dashboard.]]></description>
-      <link>https://prateek-portfolio-2025.vercel.app/projects</link>
+      <link>https://prateek.me/projects</link>
       <guid isPermaLink="false">project-ecommerce-2024</guid>
       <pubDate>Fri, 15 Mar 2024 00:00:00 GMT</pubDate>
       <category><![CDATA[Web Development]]></category>
@@ -32,9 +32,9 @@
     <item>
       <title><![CDATA[Portfolio Website Enhancement]]></title>
       <description><![CDATA[Modern, responsive portfolio website with advanced SEO optimization, performance enhancements, and accessibility features.]]></description>
-      <link>https://prateek-portfolio-2025.vercel.app</link>
+      <link>https://prateek.me</link>
       <guid isPermaLink="false">portfolio-update-2024</guid>
-      <pubDate>Sat, 19 Jul 2025 10:52:49 GMT</pubDate>
+      <pubDate>Sun, 20 Jul 2025 20:21:14 GMT</pubDate>
       <category><![CDATA[Web Development]]></category>
       <author>prateekkumar72007@gmail.com (Prateek Kumar)</author>
     </item>

@@ -19,7 +19,7 @@ Allow: /sitemap.xml
 Allow: /favicon.ico
 
 # Sitemap location
-Sitemap: https://prateek-portfolio-2025.vercel.app/sitemap.xml
+Sitemap: https://prateek.me/sitemap.xml
 
 # Crawl delay
 Crawl-delay: 1
