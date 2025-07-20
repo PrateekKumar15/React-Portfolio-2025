@@ -65,7 +65,7 @@ const Footer = () => {
   const socialLinks = [
     {
       name: "LinkedIn",
-      url: "https://www.linkedin.com/in/prateek-kumar-m07-d15-y2003/",
+      url: "https://www.linkedin.com/in/prateekkumar15/",
       icon: <FaLinkedinIn className="w-5 h-5" />,
       description: "Connect on LinkedIn for professional networking"
     },

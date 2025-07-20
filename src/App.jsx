@@ -1,5 +1,5 @@
 import { Suspense, useState, useEffect, useRef } from "react";
-import { BrowserRouter as Router} from "react-router-dom";
+import { BrowserRouter as Router } from "react-router-dom";
 import { ErrorBoundary } from "react-error-boundary";
 import { HelmetProvider } from "react-helmet-async";
 import { motion } from "framer-motion";
@@ -92,27 +92,21 @@ const App = () => {
                 {/* Main Content with Enhanced Layout */}
                 <div className="container mx-auto px-4 md:px-8 space-y-16 max-w-6xl">
                   <Navbar />
-                  
-                     
-                        <UnifiedSEO section="home" />
-                        <Hero />
-                    
-                    
-                   
-                        <UnifiedSEO section="about" />
-                        <About />
-                     
-                        <UnifiedSEO section="skills" />
-                        <Skills />
-                     
-                        <UnifiedSEO section="projects" />
-                        <Projects />
-                      
-                        <UnifiedSEO section="contact" />
-                        <Contact />
-                      
-                        <UnifiedSEO section="education" />
-                        <Education />                
+
+
+                  <UnifiedSEO section="home" />
+                  <Hero />
+
+                  <About />
+
+                  <Education />
+
+                  <Skills />
+
+                  <Projects />
+
+                  <Contact />
+
                   <Footer />
                   {/* SEO-Enhanced Footer */}
 

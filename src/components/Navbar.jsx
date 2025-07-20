@@ -85,11 +85,11 @@ const Navbar = () => {
 
   const navItems = [
     { name: "Home", link: "/", icon: <FaHome /> },
-    { name: "About", link: "/about", icon: <FaUser /> },
-    { name: "Skills", link: "/skills", icon: <FaCode /> },
-    { name: "Projects", link: "/projects", icon: <FaProjectDiagram /> },
-    { name: "Education", link: "/education", icon: <FaBriefcase /> },
-    { name: "Contact", link: "/contact", icon: <FaEnvelope /> },
+    { name: "About", link: "#about", icon: <FaUser /> },
+    { name: "Skills", link: "#skills", icon: <FaCode /> },
+    { name: "Projects", link: "#projects", icon: <FaProjectDiagram /> },
+    { name: "Education", link: "#education", icon: <FaBriefcase /> },
+    { name: "Contact", link: "#contact", icon: <FaEnvelope /> },
   ];
 
   return (
@@ -120,7 +120,7 @@ const Navbar = () => {
               {[
                 {
                   Icon: FaLinkedinIn,
-                  link: "https://www.linkedin.com/in/prateek-kumar-m07-d15-y2003/",
+                  link: "https://www.linkedin.com/in/prateekkumar15",
                   name: "LinkedIn Profile"
                 },
                 {
