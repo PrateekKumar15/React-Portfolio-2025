@@ -1,5 +1,5 @@
 import { Suspense, useState, useEffect, useRef } from "react";
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import { BrowserRouter as Router} from "react-router-dom";
 import { ErrorBoundary } from "react-error-boundary";
 import { HelmetProvider } from "react-helmet-async";
 import { motion } from "framer-motion";
@@ -30,7 +30,7 @@ import About from "./components/About";
 import Skills from "./components/Skills";
 import Projects from "./components/Projects";
 import Education from "./components/Education";
-import NotFound from "./components/NotFound";
+// import NotFound from "./components/NotFound";
 
 const App = () => {
   // Check if the app has already been loaded once in this session
@@ -92,51 +92,27 @@ const App = () => {
                 {/* Main Content with Enhanced Layout */}
                 <div className="container mx-auto px-4 md:px-8 space-y-16 max-w-6xl">
                   <Navbar />
-                  <Routes>
-                    <Route path="/" element={
-                      <>
+                  
+                     
                         <UnifiedSEO section="home" />
                         <Hero />
-                      </>
-                    } />
-                    <Route path="/about" element={
-                      <>
+                    
+                    
+                   
                         <UnifiedSEO section="about" />
                         <About />
-                      </>
-                    } />
-                    <Route path="/skills" element={
-                      <>
+                     
                         <UnifiedSEO section="skills" />
                         <Skills />
-                      </>
-                    } />
-                    <Route path="/projects" element={
-                      <>
+                     
                         <UnifiedSEO section="projects" />
                         <Projects />
-                      </>
-                    } />
-                    <Route path="/contact" element={
-                      <>
+                      
                         <UnifiedSEO section="contact" />
                         <Contact />
-                      </>
-                    } />
-                    <Route path="/education" element={
-                      <>
+                      
                         <UnifiedSEO section="education" />
-                        <Education />
-                      </>
-                    } />
-
-                    <Route path="*" element={
-                      <>
-                        <UnifiedSEO section="home" customTitle="Page Not Found - Prateek Kumar Portfolio" />
-                        <NotFound />
-                      </>
-                    } />
-                  </Routes>
+                        <Education />                
                   <Footer />
                   {/* SEO-Enhanced Footer */}
 
