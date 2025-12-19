@@ -8,10 +8,10 @@
 
 import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
-import { 
-  FaLinkedinIn, 
-  FaGithub, 
-  FaInstagram, 
+import {
+  FaLinkedinIn,
+  FaGithub,
+  FaInstagram,
   FaExternalLinkAlt,
   FaMapMarkerAlt,
   FaCalendarAlt,
@@ -113,7 +113,7 @@ const Footer = () => {
       <div className="max-w-6xl mx-auto px-4 py-12">
         {/* Main Footer Content */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-8">
-          
+
           {/* About Section */}
           <motion.div variants={itemVariants} className="space-y-4">
             <h3 className="text-lg font-semibold text-white flex items-center gap-2">
@@ -121,8 +121,8 @@ const Footer = () => {
               Prateek Kumar
             </h3>
             <p className="text-slate-400 text-sm leading-relaxed">
-              Full-Stack MERN Developer and Engineering Science student at IIT Jodhpur. 
-              Passionate about creating innovative web solutions and contributing to the 
+              Full-Stack MERN Developer and Engineering Science student at IIT Jodhpur.
+              Passionate about creating innovative web solutions and contributing to the
               tech community.
             </p>
             <div className="flex items-center text-sm text-slate-500">
@@ -199,7 +199,7 @@ const Footer = () => {
                 </a>
               ))}
             </div>
-            
+
             {/* Professional Status */}
             <div className="mt-6 p-3 bg-slate-800/50 rounded-lg border border-slate-700">
               <div className="flex items-center text-green-400 text-sm mb-1">
@@ -214,27 +214,27 @@ const Footer = () => {
         </div>
 
         {/* Bottom Bar */}
-        <motion.div 
+        <motion.div
           variants={itemVariants}
           className="pt-8 border-t border-slate-700 flex flex-col md:flex-row justify-between items-center"
         >
           <div className="text-sm text-slate-500 mb-4 md:mb-0">
             <p>
-              © {currentYear} Prateek Kumar. All rights reserved. 
+              © {currentYear} Prateek Kumar. All rights reserved.
               <span className="hidden md:inline"> Built with React, Node.js, and passion for web development.</span>
             </p>
           </div>
-          
+
           <div className="flex items-center space-x-4 text-xs text-slate-500">
-            <a 
-              href="/sitemap.xml" 
+            <a
+              href="/sitemap.xml"
               className="hover:text-indigo-400 transition-colors"
               aria-label="View XML sitemap"
             >
               Sitemap
             </a>
-            <a 
-              href="/robots.txt" 
+            <a
+              href="/robots.txt"
               className="hover:text-indigo-400 transition-colors"
               aria-label="View robots.txt file"
             >
@@ -265,7 +265,7 @@ const Footer = () => {
               "addressCountry": "India"
             },
             "sameAs": [
-              "https://www.linkedin.com/in/prateek-kumar-m07-d15-y2003/",
+              "https://www.linkedin.com/in/prateekkumar15/",
               "https://github.com/PrateekKumar15",
               "https://www.instagram.com/prateek_kumar_15"
             ],

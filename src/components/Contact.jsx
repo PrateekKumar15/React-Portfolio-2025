@@ -2,7 +2,7 @@ import { useInView } from "framer-motion";
 import { motion } from "framer-motion";
 import { useRef, useState } from "react";
 import UnifiedSEO from "./UnifiedSEO";
-import emailjs from '@emailjs/browser'; 
+import emailjs from '@emailjs/browser';
 import PropTypes from 'prop-types'; // Import PropTypes
 
 const listVariant = {
@@ -232,7 +232,7 @@ const Contact = () => {
                   Email: <a href="mailto:prateekkumar72007@gmail.com" className="text-indigo-400 hover:text-indigo-300 underline">prateekkumar72007@gmail.com</a>
                 </p>
                 <p className="text-sm mt-1">
-                  LinkedIn: <a href="https://www.linkedin.com/in/prateek-kumar-m07-d15-y2003/" target="_blank" rel="noopener noreferrer" className="text-indigo-400 hover:text-indigo-300 underline">Connect with me</a>
+                  LinkedIn: <a href="https://www.linkedin.com/in/prateekkumar15/" target="_blank" rel="noopener noreferrer" className="text-indigo-400 hover:text-indigo-300 underline">Connect with me</a>
                 </p>
               </div>
             )}
