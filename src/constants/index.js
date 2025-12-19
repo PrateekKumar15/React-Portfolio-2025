@@ -22,19 +22,41 @@ export const EDUCATION = [
     technologies: [],
   },
   {
+    year: "May 2025 - July 2025",
+    role: "Software Development Intern",
+    company: "United Techlab",
+    description: `Spearheaded the development of Adgen, an AI-driven content automation platform that reduced manual effort by 90% and enabled cross-platform scheduling. Built and deployed high-performance landing pages using Next.js and FastAPI, achieving a 90+ SEO score. Streamlined CI/CD pipelines with AWS Amplify and Lambda, cutting deployment time by 75% and improving release reliability.`,
+    technologies: [
+      "Next.js",
+      "FastAPI",
+      "Redux",
+      "AWS Amplify",
+      "Lambda",
+      "Tailwind CSS",
+      "CI/CD",
+    ],
+  },
+  {
     year: "01/2025 - 03/2025",
     role: "Frontend Developer",
     company: "IITian Vibes",
     description: `As a Frontend Developer at IITian Vibes, I spearheaded the complete redesign of the frontend interface, enhancing user experience and modernizing the platform's visual appeal. This role involved implementing responsive design principles, optimizing performance, and creating intuitive user interfaces that significantly improved user engagement and satisfaction.`,
-    technologies: ["React", "Redux-Toolkit", "Tailwind", "MUI", "Responsive Design","Google Auth"],
+    technologies: [
+      "React",
+      "Redux-Toolkit",
+      "Tailwind",
+      "MUI",
+      "Responsive Design",
+      "Google Auth",
+    ],
   },
   {
     year: "08/2024 - 10/2024",
     role: "Extracurricular Involvement",
     company: "Varchas'24 FC",
     description: `As the Finance Manager and Lead of the Web Development team for Varchas'24 FC, I successfully managed finances and led a team of 10 talented individuals to create and maintain the event's web presence. This experience honed my organizational and teamwork skills, which I bring to every project I undertake.`,
-    technologies: ["Leadership","Communication","Finance","Management"]
-    },
+    technologies: ["Leadership", "Communication", "Finance", "Management"],
+  },
   {
     year: "2021 - 2022",
     role: "12th Grade",
@@ -52,6 +74,24 @@ export const EDUCATION = [
 ];
 
 export const PROJECTS = [
+  {
+    title: "CarZone",
+    image: project2,
+    description:
+      "Developed a production-grade Car Management System with Go (v1.24) using hexagonal architecture and 25+ RESTful endpoints. Integrated secure JWT auth with role-based access, Razorpay payment gateway for full order lifecycle, and observability tools (Prometheus, Jaeger) for real-time monitoring and tracing.",
+    technologies: [
+      "Go",
+      "PostgreSQL",
+      "Gorilla Mux",
+      "JWT",
+      "Docker",
+      "Prometheus",
+      "Jaeger",
+      "Nextjs"
+    ],
+    link: "https://github.com/PrateekKumar15/CarZone",
+    live: "https://car-zone-frontend.vercel.app/", // optional: add live demo URL if hosted
+  },
   {
     title: "Silque",
     image: project1,
