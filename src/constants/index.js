@@ -22,6 +22,21 @@ export const EDUCATION = [
     technologies: [],
   },
   {
+    year: "May 2025 - July 2025",
+    role: "Software Development Intern",
+    company: "United Techlab",
+    description: `Spearheaded the development of Adgen, an AI-driven content automation platform that reduced manual effort by 90% and enabled cross-platform scheduling. Built and deployed high-performance landing pages using Next.js and FastAPI, achieving a 90+ SEO score. Streamlined CI/CD pipelines with AWS Amplify and Lambda, cutting deployment time by 75% and improving release reliability.`,
+    technologies: [
+      "Next.js",
+      "FastAPI",
+      "Redux",
+      "AWS Amplify",
+      "Lambda",
+      "Tailwind CSS",
+      "CI/CD",
+    ],
+  },
+  {
     year: "01/2025 - 03/2025",
     role: "Frontend Developer",
     company: "IITian Vibes",
@@ -75,7 +90,7 @@ export const PROJECTS = [
       "Nextjs",
     ],
     link: "https://github.com/PrateekKumar15/CarZone",
-    live: "https://car-zone-frontend.vercel.app/",
+    live: "https://car-zone-frontend.vercel.app/", // optional: add live demo URL if hosted
   },
   {
     title: "Silque",
