@@ -2,6 +2,7 @@ import project1 from "../assets/projects/project1.png";
 import project2 from "../assets/projects/project2.png";
 import project3 from "../assets/projects/project3.png";
 import project4 from "../assets/projects/project4.png";
+import project5 from "../assets/projects/project5.png";
 
 export const HERO_CONTENT = `I'm Prateek Kumar, a web developer and designer currently pursuing a Bachelor of Technology at the Indian Institute of Technology, Jodhpur. With a solid foundation in programming languages and frameworks such as HTML, CSS, JavaScript, React, Tailwind CSS, Express and Node. I am passionate about crafting responsive and user-friendly websites.
 
@@ -76,7 +77,7 @@ export const EDUCATION = [
 export const PROJECTS = [
   {
     title: "CarZone",
-    image: project2,
+    image: project5,
     description:
       "Developed a production-grade Car Management System with Go (v1.24) using hexagonal architecture and 25+ RESTful endpoints. Integrated secure JWT auth with role-based access, Razorpay payment gateway for full order lifecycle, and observability tools (Prometheus, Jaeger) for real-time monitoring and tracing.",
     technologies: [
