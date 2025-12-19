@@ -120,7 +120,7 @@ const Navbar = () => {
               {[
                 {
                   Icon: FaLinkedinIn,
-                  link: "https://www.linkedin.com/in/prateek-kumar-m07-d15-y2003/",
+                  link: "https://www.linkedin.com/in/prateekkumar15",
                   name: "LinkedIn Profile"
                 },
                 {
