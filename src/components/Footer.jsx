@@ -65,7 +65,7 @@ const Footer = () => {
   const socialLinks = [
     {
       name: "LinkedIn",
-      url: "https://www.linkedin.com/in/prateek-kumar-m07-d15-y2003/",
+      url: "https://www.linkedin.com/in/prateekkumar15",
       icon: <FaLinkedinIn className="w-5 h-5" />,
       description: "Connect on LinkedIn for professional networking"
     },
@@ -265,7 +265,7 @@ const Footer = () => {
               "addressCountry": "India"
             },
             "sameAs": [
-              "https://www.linkedin.com/in/prateek-kumar-m07-d15-y2003/",
+              "https://www.linkedin.com/in/prateekkumar15",
               "https://github.com/PrateekKumar15",
               "https://www.instagram.com/prateek_kumar_15"
             ],
