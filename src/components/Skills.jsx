@@ -1,10 +1,10 @@
 import { RiReactjsLine } from "react-icons/ri";
 import { TbBrandNextjs } from "react-icons/tb";
 import { SiMongodb, SiPrisma } from "react-icons/si";
-import { FaNodeJs, FaGitAlt, FaGithub, FaAws, FaDatabase, FaGoogle, FaCode } from "react-icons/fa";
+import { FaNodeJs, FaGitAlt, FaGithub, FaAws, FaDatabase, FaGoogle, FaCode, FaDocker } from "react-icons/fa";
 import { SiExpress, SiRedux, SiTypescript, SiPostman, SiVercel, SiNetlify, SiRender } from "react-icons/si";
 import { SiJavascript, SiHtml5, SiCss3, SiTailwindcss, SiGo, SiMysql, SiPostgresql } from "react-icons/si";
-import { SiJsonwebtokens, SiClerk } from "react-icons/si";
+import { SiJsonwebtokens, SiClerk, SiRedis, SiCloudinary, SiPrometheus, SiJaeger, SiAwslambda, SiAwsamplify, SiAmazons3, SiAmazondynamodb } from "react-icons/si";
 import { VscCode } from "react-icons/vsc";
 import { FaChartBar } from "react-icons/fa";
 import { motion, AnimatePresence } from "framer-motion";
@@ -95,7 +95,22 @@ const Skills = () => {
         { Icon: SiVercel, name: "Vercel", color: "text-white", duration: 4, description: "Frontend deployment platform" },
         { Icon: SiNetlify, name: "Netlify", color: "text-teal-400", duration: 3.5, description: "JAMstack deployment platform" },
         { Icon: SiRender, name: "Render", color: "text-purple-400", duration: 3, description: "Cloud application platform" },
-        { Icon: FaAws, name: "AWS", color: "text-orange-400", duration: 4.5, description: "Amazon Web Services" }
+        { Icon: FaAws, name: "AWS", color: "text-orange-400", duration: 4.5, description: "Amazon Web Services" },
+        { Icon: SiAwslambda, name: "AWS Lambda", color: "text-orange-500", duration: 3, description: "Serverless compute service" },
+        { Icon: SiAwsamplify, name: "AWS Amplify", color: "text-orange-400", duration: 3.5, description: "Full-stack app development" },
+        { Icon: SiAmazons3, name: "S3 Bucket", color: "text-green-500", duration: 4, description: "Cloud object storage" },
+        { Icon: SiAmazondynamodb, name: "DynamoDB", color: "text-blue-500", duration: 3, description: "NoSQL database service" },
+        { Icon: SiCloudinary, name: "Cloudinary", color: "text-blue-400", duration: 2.5, description: "Media management platform" }
+      ]
+    },
+    devops: {
+      title: "DevOps & Monitoring",
+      icon: "📊",
+      skills: [
+        { Icon: FaDocker, name: "Docker", color: "text-blue-500", duration: 3, description: "Containerization platform" },
+        { Icon: SiRedis, name: "Redis", color: "text-red-500", duration: 3.5, description: "In-memory data store" },
+        { Icon: SiPrometheus, name: "Prometheus", color: "text-orange-500", duration: 4, description: "Monitoring & alerting toolkit" },
+        { Icon: SiJaeger, name: "Jaeger", color: "text-cyan-400", duration: 3.5, description: "Distributed tracing system" }
       ]
     },
     tools: {
@@ -125,6 +140,7 @@ const Skills = () => {
     { key: "backend", label: "Backend", icon: "⚙️" },
     { key: "database", label: "Database & ORM", icon: "🗄️" },
     { key: "cloud", label: "Cloud & Hosting", icon: "☁️" },
+    { key: "devops", label: "DevOps & Monitoring", icon: "📊" },
     { key: "tools", label: "Tools & Analytics", icon: "🛠️" }
   ];
 
@@ -164,8 +180,8 @@ const Skills = () => {
             key={key}
             onClick={() => setActiveCategory(key)}
             className={`px-6 py-3 rounded-full border-2 transition-all duration-300 flex items-center gap-2 ${activeCategory === key
-                ? "border-cyan-400 bg-cyan-400/10 text-cyan-400"
-                : "border-neutral-600 text-neutral-400 hover:border-neutral-500 hover:text-neutral-300"
+              ? "border-cyan-400 bg-cyan-400/10 text-cyan-400"
+              : "border-neutral-600 text-neutral-400 hover:border-neutral-500 hover:text-neutral-300"
               }`}
           >
             <span>{icon}</span>
